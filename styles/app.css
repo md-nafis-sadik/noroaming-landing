@@ -1,0 +1,89 @@
+.hero-text-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero-text-o-gradient {
+  background: linear-gradient(113deg, #ffb3b3, #e6a3e6, #b3b3ff, #a3a3e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.content-bg-gradient-primary {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0) 2%,
+    rgba(26, 23, 55, 0.54) 21.5%,
+    #2f1b1c 47.5%,
+    rgba(27, 43, 33, 0.85) 73%,
+    rgba(0, 0, 0, 0) 98%
+  );
+}
+
+.project-home-blur {
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(1, 42, 33, 0.25) 100%
+  );
+  backdrop-filter: blur(12px);
+}
+
+.navbar-btn-gradient-dark {
+  /* background: linear-gradient(
+    to right,
+    #00000000,
+    #483bdc80,
+    #81842f,
+    #00000000
+  ); */
+}
+
+.navbar-btn-gradient-lite {
+  /* background: linear-gradient(to right, #ffffff00, #9a92ff, #f9ff4d, #ffffff00); */
+}
+
+/* Pricing */
+
+.pricing-card {
+  background: #494949;
+  box-shadow: none;
+}
+
+.pricing-card:hover {
+  background: linear-gradient(60deg, #483bdc, #ffa8a9, #82d3a4);
+  box-shadow: 0px 18px 40px 0px rgba(228, 95, 106, 0.1),
+    0px 16px 48px 0px rgba(241, 138, 64, 0.05);
+}
+
+.pricing-card > div {
+  background: #000000;
+}
+
+.pricing-card:hover > div {
+  background: linear-gradient(
+      151deg,
+      rgba(0, 0, 0, 0) -16.65%,
+      rgba(26, 23, 55, 0.54) 12.3%,
+      #0f0b2d 50.9%,
+      #010009 88.76%,
+      rgba(0, 0, 0, 0) 125.88%
+    ),
+    #000;
+}
+
+/* hide arrow from number input  */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}

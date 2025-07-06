@@ -1,0 +1,33 @@
+/* styles/gradient-button.css */
+.bg-gradient {
+  background: linear-gradient(60deg, #483bdc, #ffa8a9, #82d3a4);
+  background-size: 300% 300%;
+}
+
+.bg-gradient:hover {
+  background: #6455ff;
+}
+
+.btn-animate-gradient {
+  animation: gradientAnimation 3s ease linear infinite;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.rotate-text {
+  position: absolute;
+  transform-origin: 0 104px; /* 50% of the container height and width */
+  font-size: 1rem;
+  line-height: 1rem;
+  top: 0;
+}

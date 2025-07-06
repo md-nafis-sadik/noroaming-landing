@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer components {
+  .containerX {
+    @apply w-full max-w-[1440px] mx-auto px-4 sm:px-10 xl:px-24 2xl:px-28;
+  }
+
+  .label {
+    @apply text-base text-neutral-800 font-medium;
+  }
+
+  .input {
+    @apply w-full border border-neutral-300 p-3 bg-transparent rounded-lg outline-none focus:shadow-none focus:outline-none focus:ring-transparent;
+  }
+
+  .flex_center {
+    @apply flex items-center justify-center;
+  }
+
+  .absolute_center {
+    @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+
+  .transition_common {
+    @apply transition-all duration-300 ease-in-out;
+  }
+
+  .footer_el_title {
+    @apply text-[28px] md:text-[32px] font-bold !leading-[1.1] uppercase;
+  }
+
+  .footer_el_text {
+    @apply text-sm md:text-base font-normal !leading-normal;
+  }
+
+  .title {
+    @apply text-5xl sm:text-7xl md:text-9xl leading-[90%] font-scoutcond font-bold uppercase;
+  }
+
+  .titleLg {
+    @apply text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold font-scoutcond leading-[100%] uppercase;
+  }
+
+  .titleMd {
+    @apply text-2xl sm:text-3xl md:text-5xl font-bold font-scoutcond leading-[100%] uppercase;
+  }
+
+  .para {
+    @apply text-sm sm:text-base  text-text-600 leading-[160%] font-inter;
+  }
+
+  .input {
+    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-dashed border-natural-300 focus:blueGradient bg-white-100 text-text-900 placeholder:text-text-600 font-medium rounded-none font-inter;
+  }
+
+  .inputDark {
+    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-natural-800 focus:blueGradient bg-natural-900 text-white placeholder:text-text-700 font-medium rounded-none input border-solid font-inter;
+  }
+
+  .budgetTag {
+    @apply px-4 py-3 rounded-full border border-dashed border-natural-300 text-sm text-text-900 font-medium flex-1 whitespace-nowrap text-center cursor-pointer;
+  }
+  .activeBudgetTag {
+    @apply border-solid border-main-400 bg-main-50 text-main-400;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 whitespace-nowrap text-base font-bold !leading-[1.1] rounded-full transition_common hover:-translate-y-[2px];
+  }
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+  }
+
+  .blackGradient {
+    background: linear-gradient(90deg, #000 0%, #757575 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .whiteGradient {
+    background: linear-gradient(
+      90deg,
+      #676767 0.06%,
+      #fff 20.04%,
+      #fff 39.42%,
+      #676767 59.7%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .blueGradient {
+    border: 1px solid transparent;
+    border-image: linear-gradient(90deg, #483bdc 0%, #ffa8a9 47%, #82d3a4 100%);
+    border-image-slice: 1;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Add perspective container */
+.image-container {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Add to your Image component's wrapper */
+.tilt-image {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.accordion-content {
+  transition: height 300ms ease;
+}
+
+/* Ensure initial state */
+.accordion-item {
+  opacity: 0;
+  transform: translateY(20px);
+}
