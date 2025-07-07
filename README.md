@@ -17,5 +17,5 @@ bun dev
 ```
 
 `Feature` based Component folder structure followed
-# smart-pathshala
+# noroaming
 # noroaming-landing

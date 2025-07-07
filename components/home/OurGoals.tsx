@@ -3,16 +3,20 @@
 import { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { ConnectionIcon, ComputerIcon } from "@/services";
+import { ConnectionIcon, ComputerIcon, images } from "@/services";
 import TextFadeIn from "../animations/TextFadeIn";
 
 // Define TypeScript types
 type GoalItem = {
   title: string;
   description: string;
+  customclass: string;
+  titleclass: string;
+  descriptionclass: string;
   icon: React.ReactNode;
   bg: string;
   borderColor: string;
+  bgImage?: string; // Add this line
 };
 
 // Register ScrollTrigger plugin
@@ -23,19 +27,37 @@ export default function OurGoals() {
   
   const goals: GoalItem[] = [
     {
-      title: "Digitizing Education Management",
+      title: "Choose Your Plan",
       description:
-        "Our Mission is to Transform Educational Institution Management by Replacing Traditional Methods with a Smart, Digital, and Efficient System That Simplifies Operations and Boosts Performance.",
+        "Select a country or global plan that fits your needs.",
       icon: <ComputerIcon/>,
-      bg: "bg-sky-100",
+      titleclass: "text-main-600",
+      descriptionclass: "text-main-600",
+      customclass: 'bg-paste-600',
+      bg: "bg-main-600 text-white",
       borderColor: "border-sky-200",
     },
     {
-      title: "Connecting Students, Teachers & Parents",
+      title: "Install an eSIM",
       description:
-        "Our Goal is to Build a Strong and Seamless Connection Between Students, Teachers, and Guardians Through a Smart Mobile App, Enhancing Communication and Learning.",
+        "Scan a QR code or use our app for instant activation.",
       icon: <ConnectionIcon />,
-      bg: "bg-yellow-100",
+      titleclass: "text-white",
+      descriptionclass: "text-paste-600",
+      customclass: 'bg-main-600',
+      bg: "bg-white text-main-600",
+      borderColor: "border-yellow-200",
+      bgImage: "/images/card-background.png", // Add this line with your image path
+    },
+    {
+      title: "Stay Connected",
+      description:
+        "Scan a QR code or use our app for instant activation.",
+      icon: <ConnectionIcon />,
+      titleclass: "text-main-600",
+      descriptionclass: "text-main-600",
+      customclass: 'bg-paste-600',
+      bg: "bg-main-600 text-white",
       borderColor: "border-yellow-200",
     },
   ];
@@ -77,51 +99,47 @@ export default function OurGoals() {
   }, []);
 
   return (
-    <section className="py-10 md:py-20 xl:py-28 bg-skyish-200">
+    <section className="py-10 md:py-20 xl:py-28">
       <div className="containerX mx-auto text-center">
+        <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">How It Works</p>
         <div className="flex justify-center w-full">
           <TextFadeIn 
-            text="Our Goals" 
-            className="text-2xl md:text-4xl lg:text-[48px] font-[700] !leading-[1.2] text-text-850 tracking-wide mb-6"
+            text="How Noroaming Works in 3 Simple Steps" 
+            className="text-2xl md:text-4xl lg:text-[48px] font-[700] !leading-[1.2] text-main-600 tracking-wide"
           />
         </div>
-        <p className="text-[#4f4f4f] text-xs md:text-sm lg:text-lg mb-7 lg:mb-10 font-medium leading-relaxed transition-opacity duration-1000 ease-out text-center">
-          Setting the Path for a Smarter, More Connected Future in Education
-        </p>
 
         <div 
           ref={containerRef}
-          className="mt-10 lg:mt-16 grid gap-8 grid-cols-1 md:grid-cols-2 px-4 md:px-0"
+          className="mt-10 lg:mt-16 grid gap-6 grid-cols-1 lg:grid-cols-3 px-4 md:px-0"
         >
           {goals.map((goal, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-7 bg-white transition-transform hover:scale-105 hover:shadow-lg duration-300`}
+              className={`rounded-2xl p-8 lg:p-12 transition-transform hover:scale-105 hover:shadow-lg duration-300 ${goal?.customclass} ${
+                goal.bgImage ? "relative overflow-hidden" : ""
+              }`}
             >
-              <div className="w-full flex justify-center lg:justify-start">
+              {/* Background image for the second card */}
+              {goal.bgImage && (
+                <div 
+                  className="absolute inset-0 bg-cover bg-center opacity-100"
+                  style={{ backgroundImage: `url(${goal.bgImage})` }}
+                />
+              )}
+              <div className="w-full flex mb-8">
                 <div
-                  className={`w-[40px] lg:w-[72px] h-[40px] lg:h-[72px] mb-5 rounded-xl flex items-center justify-center ${goal.bg}`}
+                  className={`p-3 rounded-full flex items-center justify-center text-[29px] w-[62px] h-[62px] ${goal.bg}`}
                 >
-                  {goal.icon}
+                  0{index+1}
                 </div>
               </div>
-              <h3 className="text-base md:text-lg lg:text-[24px] font-bold text-gray-900 text-center lg:text-left">
+              <h3 className={`text-lg md:text-xl lg:text-[34px] ${goal.titleclass} text-left relative z-10`}>
                 {goal.title}
               </h3>
-              <p className="text-xs md:text-sm mt-3 text-[#888] lg:text-base text-center lg:text-left">
+              <p className={`text-xs md:text-sm mt-4 ${goal.descriptionclass} lg:text-base text-left relative z-10`}>
                 {goal.description}
               </p>
-              <div className="mt-6 mb-2 w-full flex justify-center lg:justify-start">
-                <a
-                  href="#"
-                  className="text-sm font-semibold text-black flex items-center gap-1 group"
-                >
-                  Learn More
-                  <span className="transform transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </a>
-              </div>
             </div>
           ))}
         </div>

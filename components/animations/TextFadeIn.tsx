@@ -9,9 +9,10 @@ gsap.registerPlugin(ScrollTrigger);
 interface TextFadeInProps {
   text: string;
   className?: string;
+  extraClassName?: string;
 }
 
-const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
+const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "", extraClassName = "" }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [words, setWords] = useState<string[]>([]);
 
@@ -100,7 +101,7 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "" }) => {
       className={cn(`flex flex-col font-inter`, className)}
     >
       {words.map((line: string, lineIndex: React.Key | null | undefined) => (
-        <div key={lineIndex} className="flex flex-wrap justify-center lg:justify-start">
+        <div key={lineIndex} className={`flex flex-wrap justify-center ${extraClassName}`}>
           {line
             .split(" ")
             .map((word: string, wordIndex: React.Key | null | undefined) => (

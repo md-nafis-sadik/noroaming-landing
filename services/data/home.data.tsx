@@ -18,35 +18,24 @@ import {
 
 export const faqData = [
   {
-    category: "General Information",
-    question: "What is Smart Pathshala?",
-    answer:
-      "Smart Pathshala is a modern school and college management system designed to digitalize and simplify institutional administration, helping schools, teachers, students, and parents stay connected.",
+    question: "How do I install an eSIM?",
+    answer: "Go to your phone's settings > Cellular > Add Cellular Plan, then scan the QR code provided by your carrier. Alternatively, follow the manual setup instructions sent via email.",
   },
   {
-    category: "General Information",
-    question: "Can Smart Pathshala be used for colleges as well?",
-    answer:
-      "Yes of course.",
+    question: "Will this work with my phone?",
+    answer: "Most modern smartphones (iPhone XS/newer and Android Pixel 3/newer) support eSIM. Check your device's specifications or contact your carrier for compatibility.",
   },
   {
-    category: "General Information",
-    question:
-      " Is Smart Pathshala available as a mobile app?",
-    answer:
-      "Yes of course.",
+    question: "What happens if I run out of data?",
+    answer: "You can top up your data plan through the app or website. Some plans may also offer automatic rollover or pay-as-you-go options.",
   },
   {
-    category: "General Information",
-    question: "How secure is Smart Pathshala?",
-    answer:
-      "Very secure",
+    question: "Is it available in my destination?",
+    answer: "Our eSIM covers [X] countries. Check the coverage map in the app or website before traveling.",
   },
   {
-    category: "General Information",
-    question: "How can I get started with Smart Pathshala?",
-    answer:
-      "By enrolling to our platform.",
+    question: "Can I switch plans?",
+    answer: "Yes, you can change your plan anytime through your account dashboard. Prorated charges or refunds may apply.",
   },
 ];
 
@@ -101,43 +90,38 @@ export const pricingData = [
 export const footerData = {
   inquiries: {
     title: "INQUIRIES",
-    address:
-      "290/737 York House Green Lane West, Garstang, Preston, Lancashire, England, PR3 1NJ",
-    phone: "+880-990-0000",
-    email: "hello@smartpathashala.com",
-    description: "A Powerful School & College Management System Designed to Streamline Administration, Enhance Learning, and Connect Everyone Seamlessly."
+    
+    description: "Stay ahead in the digital age with top-notch cyber solutions."
   },
   companyInfo: {
-    title: "Important Links",
+    title: "Quick Links",
     links: [
-      { text: "Registration", href: "/about-us" },
-      { text: "Goals", href: "/careers" },
-      { text: "Features", href: "/process" },
-      { text: "Benefits", href: "/reviews" },
-      { text: "Pricing", href: "/portfolio" },
-      { text: "Blogs", href: "/case-studies" },
-    ],
+      { text: "About Us", href: "/about-us" },
+      { text: "Pricing", href: "/pricing" },
+      { text: "Features", href: "/features" },],
   },
   services: {
-    title: "Other Links",
+    title: "Quick Links",
     links: [
-      { text: "UI/UX Design", href: "/services/ui-ux-design" },
-      { text: "Branding & Identity", href: "/services/branding" },
-      { text: "Web Development", href: "/services/web-development" },
-      { text: "Mobile App Development", href: "/services/mobile-development" },
-      { text: "SaaS Development", href: "/services/saas-development" },
-      { text: "MVP Development", href: "/services/mvp-development" },
-      { text: "3D Animation", href: "/services/3d-animation" },
+      { text: "About Us", href: "/about-us" },
+      { text: "Pricing", href: "/pricing" },
+      { text: "Features", href: "/features" },
     ],
   },
   support: {
-    title: "Other Links",
+    title: "Legal",
     links: [
-      { text: "Contact Us", href: "/help" },
       { text: "Privacy Policy", href: "/privacy-policy" },
       { text: "Terms of Service", href: "/terms-of-service" },
       
     ],
+  },
+  contact: {
+    title: "Contact us",
+    address:
+      "6391 Elgin St. Celina, Delaware 10299",
+    phone: "(480) 555-0103",
+    email: "cyber.solution@learn.com",
   },
   resources: {
     title: "RESOURCES",

@@ -1,7 +1,11 @@
 // letter serial is maintained
 
-export { default as heroPathshala } from "@/public/images/smart-pathshala-app.png";
 export { default as hero } from "@/public/images/hero.png";
+export { default as SmartDataManagement } from "@/public/images/smart-data-management.png";
+export { default as CheckingApp } from "@/public/images/checking-app.png";
+export { default as Charges } from "@/public/images/charges.png";
+export { default as CardBackground } from "@/public/images/card-background.png";
+export { default as FooterBackground } from "@/public/images/footer-bg.png";
 export { default as BkashLogo } from "@/public/images/sponsors/bkash-logo.png";
 export { default as NetroLogo } from "@/public/images/sponsors/Netro-logo.png";
 export { default as NetroIcon } from "@/public/images/sponsors/Netro-icon.png";
@@ -23,4 +27,10 @@ export { default as avatar2 } from "@/public/images/project/avatar-2.png";
 export { default as blogImage1 } from "@/public/images/blog/blogImage1.jpg";
 export { default as blogImage2 } from "@/public/images/blog/blogImage2.jpg";
 export { default as blogImage3 } from "@/public/images/blog/blogImage3.jpg";
+export { default as collaborator1 } from "@/public/images/colaborators/collaborator1.png";
+export { default as collaborator2 } from "@/public/images/colaborators/collaborator2.png";
+export { default as collaborator3 } from "@/public/images/colaborators/collaborator3.png";
+export { default as collaborator4 } from "@/public/images/colaborators/collaborator4.png";
+export { default as collaborator5 } from "@/public/images/colaborators/collaborator5.png";
+export { default as collaborator6 } from "@/public/images/colaborators/collaborator6.png";
 

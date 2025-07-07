@@ -5,6 +5,7 @@ import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 import { cn } from "@/lib/utils";
 import { DropdownIcon, PlusRoundedIcon } from "@/services/assets/svgs";
+import { ChevronDownIcon } from "lucide-react";
 
 const Accordion = AccordionPrimitive.Root;
 
@@ -14,7 +15,7 @@ const AccordionItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn("border border-gray-200 rounded-2xl", className)}
+    className={cn("border border-neutral-300 rounded-2xl bg-neutral-100", className)}
     {...props}
   />
 ));
@@ -28,7 +29,7 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between gap-4 md:gap-6 p-4 md:p-6 font-medium transition-all [&[data-state=open]>svg]:rotate-180 [&[data-state=open]>svg]:text-skyish-700",
+        "flex flex-1 items-center justify-between gap-4 md:gap-6 p-4 md:p-6 font-medium transition-all [&[data-state=open]>svg]:rotate-180",
         className
       )}
       {...props}
@@ -36,8 +37,8 @@ const AccordionTrigger = React.forwardRef<
       
 
       {children}
-      <DropdownIcon
-        className="h-[8px] w-[16px] shrink-0 transition-transform duration-200"
+      <ChevronDownIcon
+        className="h-[24px] w-[24px] shrink-0 transition-transform duration-200"
         color="currentColor"
       />
     </AccordionPrimitive.Trigger>
