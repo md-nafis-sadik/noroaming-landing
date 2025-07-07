@@ -96,24 +96,25 @@ export const footerData = {
   companyInfo: {
     title: "Quick Links",
     links: [
-      { text: "About Us", href: "/about-us" },
-      { text: "Pricing", href: "/pricing" },
-      { text: "Features", href: "/features" },],
+      { text: "About Us", href: "#about" },
+      { text: "Pricing", href: "#pricing" },
+      { text: "Features", href: "#features" },
+    ],
   },
   services: {
     title: "Quick Links",
     links: [
-      { text: "About Us", href: "/about-us" },
-      { text: "Pricing", href: "/pricing" },
-      { text: "Features", href: "/features" },
+      { text: "About Us", href: "#about" },
+      { text: "Pricing", href: "#pricing" },
+      { text: "Features", href: "#features" },
     ],
   },
   support: {
     title: "Legal",
     links: [
-      { text: "Privacy Policy", href: "/privacy-policy" },
-      { text: "Terms of Service", href: "/terms-of-service" },
-      
+      { text: "Privacy Policy", href: "#privacy-policy" },
+      { text: "Terms of Service", href: "#terms-of-service" },
+
     ],
   },
   contact: {
