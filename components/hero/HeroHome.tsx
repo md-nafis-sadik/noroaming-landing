@@ -69,7 +69,7 @@ const HeroHome = () => {
       backgroundBlendMode: 'overlay'
     }}>
       <section className="containerX relative min-h-[630px] font-[600] w-full pt-10 lg:pt-0 pb-0 px-0 lg:px-16 2xl:px-20">
-        <div className="flex flex-col lg:flex-row px-4 sm:pl-4">
+        <div className="flex flex-col lg:flex-row px-4">
           {/* Left portion */}
           <div ref={textBlockRef} className="flex flex-col w-full lg:w-[48%] pb-10">
             <div className='w-full lg:w-auto flex items-center justify-center lg:justify-start gap-[10px] mb-3.5 font-normal'>
