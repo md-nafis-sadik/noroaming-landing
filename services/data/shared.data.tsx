@@ -8,28 +8,28 @@ import {
 export const routes = {
   homepage: {
     name: "Home",
-    link: "/",
-    activeRoute: "/",
+    link: "#",
+    activeRoute: "#",
   },
   about: {
     name: "About",
-    link: "/about",
-    activeRoute: "/about",
+    link: "#about",
+    activeRoute: "#about",
   },
   services: {
     name: "Services",
-    link: "/services",
-    activeRoute: "/services",
+    link: "#services",
+    activeRoute: "#services",
   },
   pricing: {
     name: "Pricing",
-    link: "/pricing",
-    activeRoute: "/pricing",
+    link: "#pricing",
+    activeRoute: "#pricing",
   },
   contact: {
     name: "Contact us",
-    link: "/contact-us",
-    activeRoute: "/contact-us",
+    link: "#contact",
+    activeRoute: "#contact",
   },
 
 };

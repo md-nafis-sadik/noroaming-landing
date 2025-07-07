@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const LetsTalkHome = () => {
   return (
-    <section className="containerX py-6 lg:py-10 my-6 lg:my-10">
+    <section id="contact" className="containerX py-6 lg:py-10 my-6 lg:my-10">
       <div style={{
         background: `
       radial-gradient(ellipse at 30% 70%, #033877 0%, #000 100%)
@@ -22,17 +22,17 @@ const LetsTalkHome = () => {
         </div>
 
         <div className="flex justify-center w-full">
-          <form className="rounded-2xl border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[55px] md:h-[75px] flex items-center justify-between gap-4 bg-white w-full max-w-[423px]">
+          <form className="rounded-2xl border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[55px] md:h-[75px] flex items-center justify-between gap-2 lg:gap-4 bg-white w-full max-w-[423px]">
             <input
               type="email"
               placeholder="Your email"
               className={cn(
-                "text-xs md:text-sm lg:text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-black placeholder:text-gray-400 h-full font-inter max-w-[148px] md:max-w-full"
+                "text-xs md:text-sm lg:text-base font-normal !leading-[1.3] bg-transparent border-none outline-none text-black placeholder:text-gray-400 h-full font-inter max-w-[80px] md:max-w-full"
               )}
             />
             <Button
               type="submit"
-              className="text-sm lg:text-base px-5 py-2 md:py-3 lg:py-3 h-[39px] md:h-[49px] hover:bg-secondary-700 bg-secondary-600 rounded-xl"
+              className="text-xs md:text-sm lg:text-base px-3 lg:px-5 py-2 md:py-3 lg:py-3 h-[39px] md:h-[49px] hover:bg-secondary-700 bg-secondary-600 rounded-xl"
             >
               <span>Subscribe</span>
             </Button>

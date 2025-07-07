@@ -1,5 +1,15 @@
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
+
+export const interTight = Inter_Tight({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter-tight",
+  // Add the font feature settings here
+  adjustFontFallback: false,
+  fallback: ["Arial", "Helvetica", "sans-serif"],
+});
 
 export const inter = Inter({
   subsets: ["latin"],

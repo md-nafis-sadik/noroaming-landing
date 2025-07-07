@@ -5,7 +5,13 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
-
+@layer base {
+  html {
+    font-family: var(--font-inter-tight), Arial, Helvetica, sans-serif;
+    font-feature-settings: 'liga' off, 'clig' off;
+    -webkit-font-feature-settings: 'liga' off, 'clig' off;
+  }
+}
 @layer components {
   .containerX {
     @apply w-full max-w-[1440px] mx-auto px-4 sm:px-10 xl:px-24 2xl:px-28;
@@ -52,15 +58,15 @@ body {
   }
 
   .para {
-    @apply text-sm sm:text-base  text-text-600 leading-[160%] font-inter;
+    @apply text-sm sm:text-base  text-text-600 leading-[160%];
   }
 
   .input {
-    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-dashed border-natural-300 focus:blueGradient bg-white-100 text-text-900 placeholder:text-text-600 font-medium rounded-none font-inter;
+    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-dashed border-natural-300 focus:blueGradient bg-white-100 text-text-900 placeholder:text-text-600 font-medium rounded-none;
   }
 
   .inputDark {
-    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-natural-800 focus:blueGradient bg-natural-900 text-white placeholder:text-text-700 font-medium rounded-none input border-solid font-inter;
+    @apply w-full outline-none px-6 py-4 text-sm sm:text-base border border-natural-800 focus:blueGradient bg-natural-900 text-white placeholder:text-text-700 font-medium rounded-none input border-solid;
   }
 
   .budgetTag {

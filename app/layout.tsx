@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { bonbon, inter, scout, scoutCond, yesevaOne } from "@/lib/fonts";
+import { bonbon, inter, interTight, scout, scoutCond, yesevaOne } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
@@ -27,6 +27,7 @@ const RootLayout = ({
       <body
         suppressHydrationWarning
         className={cn(
+          interTight.variable,
           inter.variable,
           bonbon.variable,
           yesevaOne.variable,

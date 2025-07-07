@@ -6,7 +6,7 @@ import TextFadeIn from '../animations/TextFadeIn';
 
 export default function WhyChoose() {
   return (
-    <section className="py-4 lg:py-7 xl:py-10 containerX mx-auto bg-white">
+    <section id="about" className="py-4 lg:py-7 xl:py-10 containerX mx-auto bg-white">
       <div className="text-center mb-4 lg:mb-10">
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">Features</p>
         <div className="flex justify-center items-center w-full mx-auto">
@@ -53,7 +53,7 @@ export default function WhyChoose() {
         {/* Card 4 - No Roaming Charges */}
         <div className="bg-paste-600 col-span-1 lg:col-span-3 px-8 lg:px-12 pt-8 lg:pt-12 rounded-2xl min-h-[236px] flex flex-col lg:flex-row items-center justify-between">
           <div className="text-main-600 mb-4 lg:mb-0 h-full">
-            <h3 className="text-2xl lg:text-[64px] font-bold mb-2 lg:mb-4 leading-[50px] lg:leading-[70px]">No Roaming Charges</h3>
+            <h3 className="text-2xl lg:text-[64px] max-w-xl font-bold mb-2 lg:mb-4 leading-[50px] lg:leading-[70px]">No Roaming Charges</h3>
             <p className="text-sm font-light">Flat-rate pricing with zero hidden fees.</p>
           </div>
           <div className="relative rounded-xl">

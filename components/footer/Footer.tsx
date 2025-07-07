@@ -9,51 +9,10 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useEffect, useRef } from "react";
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
-  const footerRef = useRef(null);
-  const leftLineRef = useRef(null);
-  const column1Ref = useRef(null);
-  const column2Ref = useRef(null);
-  const column3Ref = useRef(null);
-
-  useEffect(() => {
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: footerRef.current,
-        start: "top bottom-=100",
-        toggleActions: "play none none reverse",
-      }
-    });
-
-    // Left vertical line animation
-    tl.fromTo(leftLineRef.current,
-      { scaleY: 0, transformOrigin: "top" },
-      { scaleY: 1, duration: 1.2, ease: "power4.out" }
-    );
-
-    // Column animations
-    tl.fromTo([column1Ref.current, column2Ref.current, column3Ref.current],
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        stagger: 0.2,
-        duration: 0.8,
-        ease: "power3.out",
-      },
-      "-=0.5" // Overlap with previous animation
-    );
-
-    // Cleanup
-    return () => {
-      tl.kill();
-    };
-  }, []);
   return (
-    <footer ref={footerRef} className="bg-white relative">
+    <footer className="bg-white relative">
       <div className="absolute bottom-0 left-0 h-[405px] w-[290px]">
         <Image
           alt="hero star glass image"
@@ -68,7 +27,7 @@ const Footer = () => {
         <div className="containerX">
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
             {/* Inquiries */}
-            <div ref={leftLineRef} className="text-[#151515] col-span-1 md:col-span-2 flex-col flex items-center md:items-start max-w-auto md:max-w-[363px]">
+            <div  className="text-[#151515] col-span-1 md:col-span-2 flex-col flex items-center md:items-start max-w-auto md:max-w-[363px]">
 
               <div className="max-w-[363px] flex flex-col  items-center md:items-start"><Link href='/' className="h-fit">
                 <div className="flex items-center gap-2">
@@ -94,7 +53,7 @@ const Footer = () => {
             </div>
 
             {/* Company Info */}
-            <div ref={column1Ref} className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
               <p
                 className={cn(
                   "text-center sm:text-start font-semibold text-lg lg:text-xl"
@@ -119,7 +78,7 @@ const Footer = () => {
             </div>
 
             {/* Services */}
-            <div ref={column2Ref} className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
               <p
                 className={cn(
                   " text-center sm:text-start font-semibold text-lg lg:text-xl"
@@ -143,7 +102,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div ref={column2Ref} className="text-[#151515] col-span-1 flex items-center ju md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center ju md:items-start flex-col">
               <p
                 className={cn(
                   " text-center sm:text-start font-semibold text-lg lg:text-xl"

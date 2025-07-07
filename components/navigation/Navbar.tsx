@@ -35,21 +35,30 @@ const Navbar: FC = () => {
       className={cn(
         "sticky top-0 z-50 transition-colors duration-300",
         pathname === routes.homepage.link
-          ? isScrolled ? "bg-main-600 border-natural-300" : "bg-transparent border-natural-300"
-          : isScrolled ? "bg-main-600 border-natural-300" : "bg-transparent border-natural-300"
+          ? isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"
+          : isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8 px-6 lg:px-24">
         <div className="flex items-center gap-12">
           <Link href={routes.homepage.link} className="h-fit">
             <div className="flex items-center gap-2">
-              <Image
-                src={images.Logo}
-                alt="Company logo"
-                width={173}
-                height={35}
-                priority
-              />
+              {isScrolled ?
+                <Image
+                  src={images.LogoBlack}
+                  alt="Company logo"
+                  width={173}
+                  height={35}
+                  priority
+                />
+                : <Image
+                  src={images.Logo}
+                  alt="Company logo"
+                  width={173}
+                  height={35}
+                  priority
+                />
+              }
             </div>
           </Link>
 
@@ -117,7 +126,7 @@ const Navbar: FC = () => {
 
           {/* MOBILE MENU */}
 
-          <div className="lg:hidden flex cursor-pointer" onClick={() => setIsSheetOpen(true)}><MenuIcon className="!h-5 !w-5 !shrink-0" color="white" /></div>
+          <div className="lg:hidden flex cursor-pointer" onClick={() => setIsSheetOpen(true)}><MenuIcon className="!h-5 !w-5 !shrink-0" color="black" /></div>
 
         </div>
       </div>

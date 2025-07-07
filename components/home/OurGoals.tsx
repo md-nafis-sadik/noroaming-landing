@@ -99,7 +99,7 @@ export default function OurGoals() {
   }, []);
 
   return (
-    <section className="py-10 md:py-20 xl:py-28">
+    <section id="services" className="py-10 md:py-20 xl:py-28">
       <div className="containerX mx-auto text-center">
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">How It Works</p>
         <div className="flex justify-center w-full">

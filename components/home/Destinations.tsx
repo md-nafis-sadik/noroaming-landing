@@ -20,8 +20,6 @@ const COUNTRIES: Destination[] = [
   { name: 'Bosnia and Herzegovina', code: 'ba', price: 'From $3.99' },
   { name: 'Australia', code: 'au', price: 'From $3.99' },
   { name: 'Germany', code: 'de', price: 'From $3.99' },
-  { name: 'United Kingdom', code: 'gb', price: 'From $3.99' },
-  { name: 'China', code: 'cn', price: 'From $3.99' },
 ];
 
 const REGIONS: Destination[] = [
@@ -81,7 +79,7 @@ export default function Destinations() {
   };
 
   return (
-    <section className="py-14">
+    <section id="pricing" className="py-14">
       <div className="containerX mx-auto text-center">
         <div className="flex justify-center items-center w-full mx-auto">
           <TextFadeIn
