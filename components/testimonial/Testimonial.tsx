@@ -27,7 +27,7 @@ const Testimonial = () => {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <div className="containerX w-full relative">
+    <div className="containerX w-full relative font-inter">
       <div className='text-center'>
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">Features</p>
         <div className="flex justify-center items-center w-full mx-auto">

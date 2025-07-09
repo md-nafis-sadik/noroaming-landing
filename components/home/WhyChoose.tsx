@@ -6,7 +6,7 @@ import TextFadeIn from '../animations/TextFadeIn';
 
 export default function WhyChoose() {
   return (
-    <section id="about" className="py-4 lg:py-7 xl:py-10 containerX mx-auto bg-white">
+    <section id="about" className="py-4 font-inter lg:py-7 xl:py-10 containerX mx-auto bg-white">
       <div className="text-center mb-4 lg:mb-10">
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">Features</p>
         <div className="flex justify-center items-center w-full mx-auto">

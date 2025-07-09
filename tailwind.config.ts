@@ -12,7 +12,8 @@ export default {
       scrollBehavior: ['responsive'],
       scrollSnapType: ['responsive'],
       fontFamily: {
-        inter: ["var(--font-inter)"],
+        sans: ["var(--font-inter-tight)", "Arial", "Helvetica", "sans-serif"],
+        inter: ["var(--font-inter-tight)"],
         bonbon: ["var(--font-bonbon)"],
         "yeseva-one": ["var(--font-yeseva-one)"],
         poppins: ["var(--font-poppins)"],
