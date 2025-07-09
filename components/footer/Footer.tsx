@@ -12,7 +12,7 @@ import { useEffect, useRef } from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white relative">
+    <footer className="bg-white relative font-inter">
       <div className="absolute bottom-0 left-0 h-[405px] w-[290px]">
         <Image
           alt="hero star glass image"

@@ -79,7 +79,7 @@ export default function Destinations() {
   };
 
   return (
-    <section id="pricing" className="py-14">
+    <section id="pricing" className="py-14 font-inter">
       <div className="containerX mx-auto text-center">
         <div className="flex justify-center items-center w-full mx-auto">
           <TextFadeIn

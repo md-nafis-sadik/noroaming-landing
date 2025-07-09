@@ -33,7 +33,7 @@ const Navbar: FC = () => {
   return (
     <nav
       className={cn(
-        "sticky top-0 z-50 transition-colors duration-300",
+        "sticky top-0 z-50 transition-colors duration-300 font-inter",
         pathname === routes.homepage.link
           ? isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"
           : isScrolled ? "bg-white lg:bg-transparent border-natural-300" : "bg-transparent border-natural-300"

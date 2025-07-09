@@ -62,7 +62,7 @@ const HeroHome = () => {
   }, [])
 
   return (
-    <section ref={sectionRef} className='relative pt-[160px]' style={{
+    <section ref={sectionRef} className='relative pt-[160px] font-inter' style={{
       background: `
       radial-gradient(ellipse at 50% 80%, #033877 0%, #000 100%)
     `,

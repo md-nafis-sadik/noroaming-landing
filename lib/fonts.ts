@@ -1,22 +1,25 @@
 import localFont from "next/font/local";
-import { Inter } from "next/font/google";
-import { Inter_Tight } from "next/font/google";
 
-export const interTight = Inter_Tight({
-  subsets: ["latin"],
-  display: "swap",
+// Primary font - Inter Tight Variable (with italic support)
+export const interTight = localFont({
+  src: [
+    {
+      path: "../public/fonts/inter_tight/InterTight-VariableFont_wght.ttf",
+      weight: "100 900",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/inter_tight/InterTight-Italic-VariableFont_wght.ttf",
+      weight: "100 900", 
+      style: "italic",
+    },
+  ],
   variable: "--font-inter-tight",
-  // Add the font feature settings here
-  adjustFontFallback: false,
-  fallback: ["Arial", "Helvetica", "sans-serif"],
-});
-
-export const inter = Inter({
-  subsets: ["latin"],
   display: "swap",
-  variable: "--font-inter",
 });
 
+
+// Local font - Bonbon
 export const bonbon = localFont({
   src: [
     {
@@ -72,9 +75,10 @@ export const scout = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-scout-one",
+  variable: "--font-scout",
 });
 
+// Local font - Scout Condensed (multiple weights)
 export const scoutCond = localFont({
   src: [
     {
@@ -108,5 +112,23 @@ export const scoutCond = localFont({
       style: "normal",
     },
   ],
-  variable: "--font-scout-one",
+  variable: "--font-scout-cond",
 });
+
+type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
+
+export const interTightStyle = (weight: FontWeight, italic = false) => {
+  return {
+    fontFamily: "var(--font-inter-tight)",
+    fontStyle: italic ? "italic" : "normal",
+    fontVariationSettings: `"wght" ${weight}`,
+  };
+};
+
+export const fonts = {
+  interTight,
+  bonbon,
+  yesevaOne,
+  scout,
+  scoutCond,
+};
