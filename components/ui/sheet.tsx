@@ -70,6 +70,10 @@ const SheetContent = React.forwardRef<
         {...props}
       >
         <div className="absolute top-0 left-0 z-[60] h-full w-full bg-primary-dark">
+          {/* Add a visually hidden title for accessibility */}
+          <SheetPrimitive.Title className="sr-only">
+            Sheet title
+          </SheetPrimitive.Title>
           {children}
           <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
             {showCrossIcon && <X className="h-6 w-6" />}
