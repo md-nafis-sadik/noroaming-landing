@@ -8,7 +8,7 @@ import CollaborateMarquee from "@/components/shared/CollaborateMarquee";
 
 const HomePage = () => {
   return (
-    <main className="relative mt-[-120px] overflow-hidden">
+    <main className="relative mt-[-127px] overflow-hidden">
       <HeroHome />
       <Destinations />
       <WhyChoose />
