@@ -98,23 +98,24 @@ const HeroHome = () => {
             />
 
             <div className="mt-5 lg:mt-12 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-3">
-              <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2.5 lg:py-3">
-                <span>
-                  <DownloadAppIcon className="block lg:hidden w-5" />
-                  <DownloadAppIcon className="hidden lg:block" />
-                </span>
-                <span className="!leading-none text-sm lg:text-lg">
-                  Download App
-                </span>
-              </GradientButton>
-              <GradientButton className="w-fit group bg-main-600 text-white border border-white hover:bg-main-700 py-3 lg:py-3.5">
-                <span></span>
-                <Link href="#pricing">
+              <Link href="https://play.google.com/store/apps/details?id=com.noroaming.app&pcampaignid=web_share">
+                <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2.5 lg:py-3">
+                  <span>
+                    <DownloadAppIcon className="block lg:hidden w-5" />
+                    <DownloadAppIcon className="hidden lg:block" />
+                  </span>
+                  <span className="!leading-none text-sm lg:text-lg">
+                    Download App
+                  </span>
+                </GradientButton>
+              </Link>
+              <Link href="#pricing">
+              <GradientButton className="w-fit group bg-main-600 text-white border border-white hover:bg-main-700 py-3 lg:py-3.5">                
                   <span className="!leading-none text-sm lg:text-lg">
                     View Plans
                   </span>
-                </Link>
               </GradientButton>
+              </Link>
             </div>
           </div>
 
