@@ -32,11 +32,11 @@ const Navbar: FC = () => {
         "sticky top-0 z-50 transition-colors duration-300 font-inter",
         pathname === routes.homepage.link
           ? isScrolled
-            ? "bg-white lg:bg-transparent border-b border-natural-300"
-            : "bg-transparent border-natural-300"
+            ? "bg-white lg:bg-transparent border-b lg:border-none border-natural-300"
+            : "bg-transparent"
           : isScrolled
-          ? "bg-white lg:bg-transparent border-b border-natural-300"
-          : "bg-transparent border-natural-300"
+          ? "bg-white lg:bg-transparent border-b lg:border-none border-natural-300"
+          : "bg-transparent"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8 px-6 lg:px-24">
