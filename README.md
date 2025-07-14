@@ -17,5 +17,6 @@ bun dev
 ```
 
 `Feature` based Component folder structure followed
-# noroaming
-# noroaming-landing
+# lemon-jelly-media
+# lemon-jelly-media-landing
+# lemon-jelly-media

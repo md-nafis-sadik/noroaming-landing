@@ -26,10 +26,10 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
 }) => {
   return (
     <Sheet open={isSheetOpen} onOpenChange={closeSheet}>
-      <SheetContent showCrossIcon={false} className=" select-none">
+      <SheetContent showCrossIcon={false} className="font-inter select-none">
         <SheetHeader className="hidden" />
 
-        <div className="bg-white flex_center justify-end py-3 px-6 border-b ">
+        <div className="bg-white flex_center justify-end py-6 px-6 border-b ">
 
           <div className="lg:hidden flex cursor-pointer" onClick={closeSheet}><CrossIcon color="black" className="!h-5 !w-5 !shrink-0" /></div>
 
