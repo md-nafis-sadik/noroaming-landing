@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <section className="containerX mx-auto px-0 lg:px-16 2xl:px-24 py-12 font-inter">
+    <section className="containerX mx-auto py-12 font-inter">
       <div className="mb-12">
         <h1 className="text-4xl font-bold mb-4" style={{ color: '#001C3E' }}>Privacy Policy</h1>
         <p className="text-lg text-gray-600">Effective Date: 2025-07-07</p>
@@ -9,7 +9,7 @@ function PrivacyPolicy() {
       <div className="bg-white rounded-lg">
         <div className="mb-10">
           <p className="mb-6">
-            This Privacy Policy describes how Noroaming ("we," "us," or "our") collects, uses, and shares your personal information when you use our mobile application and services. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.
+            This Privacy Policy describes how <b>NoRoaming</b> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and shares your personal information when you use our mobile application and services. We are committed to protecting your privacy and ensuring that your personal information is handled in a safe and responsible manner.
           </p>
         </div>
 
@@ -21,15 +21,15 @@ function PrivacyPolicy() {
               <div>
                 <h3 className="text-lg font-semibold mb-2">1.1. Personal Information You Provide</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><span className="font-medium">Account Information:</span> When you create a Noroaming account, we collect your name, email address, and password.</li>
-                  <li><span className="font-medium">Family Member Information:</span> If you add a family member to your account, we collect their name and relationship to you. As the parent account holder, you are responsible for providing this information and for the family member's use of the service.</li>
+                  <li><span className="font-medium">Account Information:</span> When you create a NoRoaming account, we collect your name, email address, and password.</li>
+                  <li><span className="font-medium">Family Member Information:</span> If you add a family member to your account, we collect their name and relationship to you. As the parent account holder, you are responsible for providing this information and for the family member&apos;s use of the service.</li>
                   <li><span className="font-medium">Purchase Information:</span> To process your purchases of eSIM packages, we collect information necessary to complete the transaction. This may include your name, billing address, and a partial, tokenized version of your payment card information. All payments are processed securely by our third-party payment processor, Stripe. We do not store your full credit card number on our servers.</li>
                 </ul>
               </div>
               <div>
                 <h3 className="text-lg font-semibold mb-2">1.2. Information Collected Automatically</h3>
                 <ul className="list-disc pl-6 space-y-2">
-                  <li><span className="font-medium">Usage Data:</span> We collect information about how you use the Noroaming app, such as the features you interact with, the packages you view and purchase, and the validity of your active packages.</li>
+                  <li><span className="font-medium">Usage Data:</span> We collect information about how you use the NoRoaming app, such as the features you interact with, the packages you view and purchase, and the validity of your active packages.</li>
                   <li><span className="font-medium">Device Information:</span> We may collect information about your mobile device, including the device model, operating system version, and unique device identifiers. This helps us to troubleshoot issues and optimize our service for your device.</li>
                   <li><span className="font-medium">eSIM Information:</span> To provide our core service, we generate and provide you with an eSIM QR code. We track the status of your eSIM (active, inactive) and the data consumption associated with your purchased packages.</li>
                 </ul>
@@ -56,7 +56,7 @@ function PrivacyPolicy() {
             <ul className="list-disc pl-6 space-y-2">
               <li><span className="font-medium">With Our Service Providers:</span> We share information with third-party service providers who perform services on our behalf, such as payment processing. Our payment processor, Stripe, has its own privacy policy, and we encourage you to review it. We only share the information necessary for them to perform their services.</li>
               <li><span className="font-medium">For Legal Reasons:</span> We may disclose your information if we are required to do so by law or in response to a valid legal request, such as a court order or government inquiry.</li>
-              <li><span className="font-medium">To Protect Our Rights:</span> We may disclose your information to protect the rights, property, or safety of Noroaming, our users, or others.</li>
+              <li><span className="font-medium">To Protect Our Rights:</span> We may disclose your information to protect the rights, property, or safety of NoRoaming, our users, or others.</li>
             </ul>
             <p className="mt-4">We do not sell your personal information to third parties.</p>
           </div>
@@ -67,7 +67,7 @@ function PrivacyPolicy() {
             <div className="grid md:grid-cols-2 gap-6">
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">Access and Correction</h3>
-                <p>You can access and update your account information at any time through the app's settings.</p>
+                <p>You can access and update your account information at any time through the app&apos;s settings.</p>
               </div>
               <div className="border border-gray-200 rounded-lg p-4">
                 <h3 className="font-semibold mb-2">Data Deletion</h3>
@@ -90,7 +90,7 @@ function PrivacyPolicy() {
 
           {/* Section 6 */}
           <div>
-            <h2 className="text-2xl font-bold mb-4" style={{ color: '#001C3E' }}>6. Children's Privacy</h2>
+            <h2 className="text-2xl font-bold mb-4" style={{ color: '#001C3E' }}>6. Children&apos;s Privacy</h2>
             <p>
               Our services are not directed to children under the age of 13 without the consent and supervision of a parent or guardian. The family member feature is intended for a parent or legal guardian to manage eSIM access for their dependents. We do not knowingly collect personal information from children under 13 without parental consent. If you believe we have collected information from a child under 13 without proper consent, please contact us immediately at kontakt@egalactic.com.
             </p>
@@ -108,7 +108,7 @@ function PrivacyPolicy() {
           <div>
             <h2 className="text-2xl font-bold mb-4" style={{ color: '#001C3E' }}>8. Changes to This Privacy Policy</h2>
             <p>
-              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top. We encourage you to review this Privacy Policy periodically for any changes.
+              We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Effective Date&quot; at the top. We encourage you to review this Privacy Policy periodically for any changes.
             </p>
           </div>
 
@@ -120,7 +120,6 @@ function PrivacyPolicy() {
           </div>
         </div>
       </div>
-
     </section>
   );
 }

@@ -39,7 +39,7 @@ const Navbar: FC = () => {
           : "bg-transparent"
       )}
     >
-      <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8 px-6 lg:px-24">
+      <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8">
         <div className="flex items-center gap-12">
           <Link href={routes.homepage.link} className="h-fit">
             <div className="flex items-center gap-2">
