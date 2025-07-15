@@ -112,7 +112,7 @@ export const footerData = {
   support: {
     title: "Legal",
     links: [
-      { text: "Privacy Policy", href: "#privacy-policy" },
+      { text: "Privacy Policy", href: "/privacy-policy" },
       { text: "Terms of Service", href: "#terms-of-service" },
 
     ],

@@ -8,7 +8,7 @@ import {
 export const routes = {
   homepage: {
     name: "Home",
-    link: "#",
+    link: "/",
     activeRoute: "#",
   },
   about: {

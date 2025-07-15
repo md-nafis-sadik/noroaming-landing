@@ -3,7 +3,6 @@ import { bonbon, interTight, scout, scoutCond, yesevaOne } from "@/lib/fonts";
 import "@/styles/globals.css";
 import "@/styles/app.css";
 import Footer from "@/components/footer/Footer";
-import LetsTalk from "@/components/letsTalk/LetsTalkHome";
 import Navbar from "@/components/navigation/Navbar";
 import { cn } from "@/lib/utils";
 import LenisWrapper from "@/components/wrapper/LenisWrapper";
@@ -38,7 +37,6 @@ const RootLayout = ({
         <LenisWrapper>
           <Navbar />
           {children}
-          <LetsTalk />
           <Footer />
         </LenisWrapper>
       </body>

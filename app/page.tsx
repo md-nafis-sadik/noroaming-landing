@@ -5,6 +5,7 @@ import OurGoals from "@/components/home/OurGoals";
 import Destinations from "@/components/home/Destinations";
 import WhyChoose from "@/components/home/WhyChoose";
 import CollaborateMarquee from "@/components/shared/CollaborateMarquee";
+import LetsTalkHome from "@/components/letsTalk/LetsTalkHome";
 
 const HomePage = () => {
   return (
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Testimonial />
       <FAQ />
       <CollaborateMarquee/>
+      <LetsTalkHome />
     </main>
   );
 };
