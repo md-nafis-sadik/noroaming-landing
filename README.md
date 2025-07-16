@@ -1,10 +1,10 @@
-live build site -
+# NoRoaming Platform
 
-### https://netro02.vercel.app/
+**Live URL:** [https://www.noroaming.com](https://www.noroaming.com)
 
-## Getting Started
+## 🚀 Getting Started
 
-First, run the development server:
+To run the development server locally:
 
 ```bash
 npm run dev
@@ -16,8 +16,17 @@ pnpm dev
 bun dev
 ```
 
-`Feature` based Component folder structure followed
-# lemon-jelly-media
-# lemon-jelly-media-landing
-# lemon-jelly-media
-# noroaming_landing
+## Project Structure
+
+```bash
+/
+├── lemon-jelly-media
+├── lemon-jelly-media-landing
+├── lemon-jelly-media       
+└── noroaming_landing
+```
+
+## 🛠️ Tech Stack
+
+- Next.js (App Router)
+- Tailwind CSS
