@@ -12,34 +12,33 @@ import {
   YoutubeIcon,
 } from "@/services/assets/svgs";
 
-
-
-
-
 export const faqData = [
   {
     question: "How do I install an eSIM?",
-    answer: "Go to your phone's settings > Cellular > Add Cellular Plan, then scan the QR code provided by your carrier. Alternatively, follow the manual setup instructions sent via email.",
+    answer:
+      "Go to your phone's settings > Cellular > Add Cellular Plan, then scan the QR code provided by your carrier. Alternatively, follow the manual setup instructions sent via email.",
   },
   {
     question: "Will this work with my phone?",
-    answer: "Most modern smartphones (iPhone XS/newer and Android Pixel 3/newer) support eSIM. Check your device's specifications or contact your carrier for compatibility.",
+    answer:
+      "Most modern smartphones (iPhone XS/newer and Android Pixel 3/newer) support eSIM. Check your device's specifications or contact your carrier for compatibility.",
   },
   {
     question: "What happens if I run out of data?",
-    answer: "You can top up your data plan through the app or website. Some plans may also offer automatic rollover or pay-as-you-go options.",
+    answer:
+      "You can top up your data plan through the app or website. Some plans may also offer automatic rollover or pay-as-you-go options.",
   },
   {
     question: "Is it available in my destination?",
-    answer: "Our eSIM covers [X] countries. Check the coverage map in the app or website before traveling.",
+    answer:
+      "Our eSIM covers [X] countries. Check the coverage map in the app or website before traveling.",
   },
   {
     question: "Can I switch plans?",
-    answer: "Yes, you can change your plan anytime through your account dashboard. Prorated charges or refunds may apply.",
+    answer:
+      "Yes, you can change your plan anytime through your account dashboard. Prorated charges or refunds may apply.",
   },
 ];
-
-
 
 export const pricingData = [
   {
@@ -90,15 +89,15 @@ export const pricingData = [
 export const footerData = {
   inquiries: {
     title: "INQUIRIES",
-    
-    description: "Stay ahead in the digital age with top-notch cyber solutions."
+
+    description: "Stay connected from everywhere with our eSIM",
   },
   companyInfo: {
     title: "Quick Links",
     links: [
-      { text: "About Us", href: "#about" },
-      { text: "Pricing", href: "#pricing" },
-      { text: "Features", href: "#features" },
+      { text: "About Us", href: "/#about" },
+      { text: "Pricing", href: "/#pricing" },
+      { text: "Features", href: "/#features" },
     ],
   },
   services: {
@@ -111,18 +110,13 @@ export const footerData = {
   },
   support: {
     title: "Legal",
-    links: [
-      { text: "Privacy Policy", href: "/privacy-policy" },
-      { text: "Terms of Service", href: "#terms-of-service" },
-
-    ],
+    links: [{ text: "Privacy Policy", href: "privacy-policy" }],
   },
   contact: {
     title: "Contact us",
-    address:
-      "6391 Elgin St. Celina, Delaware 10299",
+    address: "E Galactic e.U. Alxingergasse 105/39 1100 Vienna, Austria",
     phone: "(480) 555-0103",
-    email: "cyber.solution@learn.com",
+    email: "kontakt@egalactic.com",
   },
   resources: {
     title: "RESOURCES",

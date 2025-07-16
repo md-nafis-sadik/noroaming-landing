@@ -16,6 +16,35 @@ const Navbar: FC = () => {
   const [isSheetOpen, setIsSheetOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+  const [activeHash, setActiveHash] = useState("");
+
+  useEffect(() => {
+    // Client-side only code
+    setIsScrolled(window.scrollY > 10);
+    setActiveHash(window.location.hash);
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    const handleHashChange = () => {
+      setActiveHash(window.location.hash);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("hashchange", handleHashChange);
+    };
+  }, []);
+
+  // Helper function that works on both server and client
+  const isActive = (link: string) => {
+    if (link === "/") return pathname === "/" && !activeHash;
+    return activeHash === link;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,7 +96,8 @@ const Navbar: FC = () => {
           {navbarData.map(({ link, name, megaMenu }, index) => (
             <div className="flex flex-row items-center" key={index}>
               <Link
-                href={link}
+                href={link.startsWith("#") ? link : `/${link}`}
+                key={name}
                 className="h-[34px] w-fit py-2 px-4 border-none outline-none group flex items-center gap-1 relative"
               >
                 <span
@@ -115,9 +145,11 @@ const Navbar: FC = () => {
 
         <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* DOWNLOAD APP */}
-          <Button className="hidden md:flex bg-secondary-600 hover:bg-secondary-700 flex_center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm">
-            <span className="!leading-none">Download App</span>
-          </Button>
+          <Link href="https://play.google.com/store/apps/details?id=com.noroaming.app&pcampaignid=web_share">
+            <Button className="hidden md:flex bg-secondary-600 hover:bg-secondary-700 flex_center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm">
+              <span className="!leading-none">Download App</span>
+            </Button>
+          </Link>
 
           {/* MOBILE MENU */}
 
