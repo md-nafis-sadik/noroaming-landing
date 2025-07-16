@@ -143,7 +143,7 @@ const Footer = () => {
 
                   <p className="footer_el_text">{footerData.contact.address}</p>
                 </div>
-                <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3 mt-3 lg:mt-4 md:mt-6">
+                {/* <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3 mt-3 lg:mt-4 md:mt-6">
                   <div className="text-sm lg:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -162,7 +162,7 @@ const Footer = () => {
                   </div>
 
                   <p className="footer_el_text">{footerData.contact.phone}</p>
-                </div>
+                </div> */}
                 <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3  mt-3 lg:mt-4 md:mt-6">
                   <div className="text-sm lg:text-base">
                     <svg
