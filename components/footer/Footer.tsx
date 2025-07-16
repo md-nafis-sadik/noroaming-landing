@@ -28,12 +28,12 @@ const Footer = () => {
           className="object-contain"
         />
       </div>
-      <div className="py-6 md:py-20">
+      <div className="py-6 lg:py-20">
         <div className="containerX">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
             {/* Inquiries */}
-            <div className="text-[#151515] col-span-1 md:col-span-2 flex-col flex items-center md:items-start max-w-auto md:max-w-[363px]">
-              <div className="max-w-[363px] flex flex-col  items-center md:items-start">
+            <div className="text-[#151515] col-span-1 lg:col-span-2 flex-col flex items-center lg:items-start max-w-auto lg:max-w-[363px]">
+              <div className="max-w-[363px] flex flex-col  items-center lg:items-start">
                 <Link href="/" className="h-fit">
                   <div className="flex items-center gap-2">
                     <Image
@@ -45,7 +45,7 @@ const Footer = () => {
                 </Link>
                 <p
                   className={cn(
-                    "text-xs md:text-sm lg:text-base mt-4 md:mt-6 text-center md:text-start font-inter"
+                    "text-xs md:text-sm lg:text-base mt-4 lg:mt-6 text-center lg:text-start font-inter"
                   )}
                 >
                   {footerData.inquiries.description}
@@ -61,7 +61,7 @@ const Footer = () => {
             </div>
 
             {/* Company Info */}
-            <div className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center lg:items-start flex-col">
               <p
                 className={cn(
                   "text-center sm:text-start font-semibold text-lg lg:text-xl"
@@ -69,7 +69,7 @@ const Footer = () => {
               >
                 {footerData.companyInfo.title}
               </p>
-              <ul className="mt-4 md:mt-6">
+              <ul className="mt-4 lg:mt-6">
                 {footerData.companyInfo.links.map((link, index) => (
                   <li key={index}>
                     <Link
@@ -88,7 +88,7 @@ const Footer = () => {
             </div>
 
             {/* Support */}
-            <div className="text-[#151515] col-span-1 flex items-center md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center lg:items-start flex-col">
               <p
                 className={cn(
                   "text-center sm:text-start font-semibold text-lg lg:text-xl"
@@ -96,7 +96,7 @@ const Footer = () => {
               >
                 {footerData.support.title}
               </p>
-              <ul className="mt-4 md:mt-6">
+              <ul className="mt-4 lg:mt-6">
                 {footerData.support.links.map((link, index) => (
                   <li key={index}>
                     <Link
@@ -114,7 +114,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div className="text-[#151515] col-span-1 flex items-center ju md:items-start flex-col">
+            <div className="text-[#151515] col-span-1 flex items-center ju lg:items-start flex-col">
               <p
                 className={cn(
                   " text-center sm:text-start font-semibold text-lg lg:text-xl"
@@ -122,8 +122,8 @@ const Footer = () => {
               >
                 {footerData.contact.title}
               </p>
-              <ul className="mt-4 md:mt-6">
-                <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3">
+              <ul className="mt-4 lg:mt-6">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
                   <div className="text-sm lg:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -141,9 +141,9 @@ const Footer = () => {
                     </svg>
                   </div>
 
-                  <p className="footer_el_text">{footerData.contact.address}</p>
+                  <p className="footer_el_text text-center lg:text-left">{footerData.contact.address}</p>
                 </div>
-                {/* <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3 mt-3 lg:mt-4 md:mt-6">
+                {/* <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3 mt-3 lg:mt-4 lg:mt-6">
                   <div className="text-sm lg:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -163,7 +163,7 @@ const Footer = () => {
 
                   <p className="footer_el_text">{footerData.contact.phone}</p>
                 </div> */}
-                <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3  mt-3 lg:mt-4 md:mt-6">
+                <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-3  mt-3 md:mt-4 lg:mt-6">
                   <div className="text-sm lg:text-base">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -187,7 +187,7 @@ const Footer = () => {
                       />
                     </svg>
                   </div>
-                  <p className="footer_el_text">{footerData.contact.email}</p>
+                  <p className="footer_el_text text-center lg:text-left">{footerData.contact.email}</p>
                 </div>
               </ul>
             </div>

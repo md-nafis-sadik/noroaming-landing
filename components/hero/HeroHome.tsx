@@ -120,12 +120,12 @@ const HeroHome = () => {
           </div>
 
           {/* Right portion */}
-          <div className="relative lg:absolute lg:right-0 lg:bottom-0 w-full h-[250px] sm:h-[400px] md:h-[450px] lg:w-[59%] lg:h-[500px] xl:h-[620px] 2xl:h-[720px]">
+          <div className="relative lg:absolute lg:right-0 lg:bottom-0 w-full h-[212px] sm:h-[480px] md:h-[680px] lg:w-[59%] lg:h-[500px] xl:h-[620px] 2xl:h-[720px]">
             <Image
               ref={imageRef}
               alt="hero star glass image"
               src={images.hero}
-              className="h-full w-full object-cover"
+              className="h-full w-full object-contain sm:object-cover"
               fill
               priority
             />
