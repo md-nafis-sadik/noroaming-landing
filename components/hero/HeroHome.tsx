@@ -7,7 +7,7 @@ import TextFadeIn from "../animations/TextFadeIn";
 import AnimatedText from "../ui/AnimatedTitle";
 import { GradientButton } from "../ui/gradient-button";
 import Image from "next/image";
-import { DownloadAppIcon, images } from "@/services";
+import { DownloadAppIcon, DownloadAppleAppIcon, images } from "@/services";
 import Link from "next/link";
 
 // Import other components & assets...
@@ -109,12 +109,16 @@ const HeroHome = () => {
                   </span>
                 </GradientButton>
               </Link>
-              <Link href="#pricing">
-              <GradientButton className="w-fit group bg-main-600 text-white border border-white hover:bg-main-700 py-3 lg:py-3.5">                
-                  <span className="!leading-none text-sm lg:text-lg">
-                    View Plans
+              <Link href="https://apps.apple.com/us/app/noroaming/id6747082990">
+              <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2.5 lg:py-3">
+                  <span>
+                    <DownloadAppleAppIcon className=" w-5 lg:w-auto" />
+
                   </span>
-              </GradientButton>
+                  <span className="!leading-none text-sm lg:text-lg">
+                    Download App
+                  </span>
+                </GradientButton>
               </Link>
             </div>
           </div>
