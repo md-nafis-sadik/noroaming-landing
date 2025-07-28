@@ -64,7 +64,7 @@ const HeroHome = () => {
   return (
     <section
       ref={sectionRef}
-      className="relative pt-[170px] font-inter"
+      className="relative pt-[120px] lg:pt-[170px] font-inter"
       style={{
         background: `
       radial-gradient(ellipse at 50% 80%, #033877 0%, #000 100%)
@@ -99,25 +99,31 @@ const HeroHome = () => {
 
             <div className="mt-5 lg:mt-12 flex flex-col lg:flex-row items-center justify-center lg:justify-start gap-3">
               <Link href="https://play.google.com/store/apps/details?id=com.noroaming.app&pcampaignid=web_share">
-                <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2.5 lg:py-3">
-                  <span>
-                    <DownloadAppIcon className="block lg:hidden w-5" />
-                    <DownloadAppIcon className="hidden lg:block" />
-                  </span>
-                  <span className="!leading-none text-sm lg:text-lg">
-                    Download App
-                  </span>
+                <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2 rounded-lg lg:rounded-xl">
+                  <div>
+                    <DownloadAppIcon className="w-5 lg:w-auto" />
+                  </div>
+                  <div className="!leading-none text-left">
+                    <div className="text-[8px] lg:text-[9px]">Get it on</div>
+                    <div className="text-sm lg:text-lg mt-[-2px] lg:mt-[-3px]">
+                      Google Play
+                    </div>
+                  </div>
                 </GradientButton>
               </Link>
               <Link href="https://apps.apple.com/us/app/noroaming/id6747082990">
-              <GradientButton className="w-fit group bg-white text-text-900 hover:bg-neutral-100 py-2.5 lg:py-3">
-                  <span>
-                    <DownloadAppleAppIcon className=" w-5 lg:w-auto" />
-
-                  </span>
-                  <span className="!leading-none text-sm lg:text-lg">
-                    Download App
-                  </span>
+                <GradientButton className="w-fit group bg-main-600 border border-white text-white hover:bg-main-700 py-2 rounded-lg lg:rounded-xl">
+                  <div>
+                    <DownloadAppleAppIcon className="w-5 lg:w-auto" />
+                  </div>
+                  <div className="!leading-none text-left">
+                    <div className="text-[8px] lg:text-[9px]">
+                      Download on the
+                    </div>
+                    <div className="text-sm lg:text-lg mt-[-2px] lg:mt-[-3px]">
+                      App Store
+                    </div>
+                  </div>
                 </GradientButton>
               </Link>
             </div>

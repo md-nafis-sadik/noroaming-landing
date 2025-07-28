@@ -9,7 +9,8 @@ import LenisWrapper from "@/components/wrapper/LenisWrapper";
 
 export const metadata: Metadata = {
   title: "Noroaming",
-  description: "Noroaming is your one-stop eSIM solution for seamless global connectivity.",
+  description:
+    "Noroaming is your one-stop eSIM solution for seamless global connectivity.",
   icons: {
     icon: "/favicon.svg", // Path to your favicon in the public directory
   },
@@ -20,7 +21,6 @@ const RootLayout = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-
   return (
     <html lang="en" data-arp suppressHydrationWarning>
       <body

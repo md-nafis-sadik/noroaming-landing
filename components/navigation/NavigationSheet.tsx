@@ -1,5 +1,10 @@
 import { FC, Fragment } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { GradientButton } from "../ui/gradient-button";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
@@ -32,8 +37,8 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
         </SheetHeader>
 
         <div className="bg-white flex items-center justify-end py-6 px-6 border-b">
-          <button 
-            className="lg:hidden flex cursor-pointer" 
+          <button
+            className="lg:hidden flex cursor-pointer"
             onClick={closeSheet}
             aria-label="Close navigation menu"
           >

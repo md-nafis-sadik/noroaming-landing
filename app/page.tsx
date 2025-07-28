@@ -16,7 +16,7 @@ const HomePage = () => {
       <OurGoals />
       <Testimonial />
       <FAQ />
-      <CollaborateMarquee/>
+      <CollaborateMarquee />
       <LetsTalkHome />
     </main>
   );

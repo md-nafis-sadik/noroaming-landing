@@ -31,7 +31,6 @@ export const routes = {
     link: "#contact",
     activeRoute: "#contact",
   },
-
 };
 
 export const navbarData = [
@@ -57,7 +56,6 @@ export const navbarData = [
     name: routes.contact.name,
     link: routes.contact.link,
   },
-
 ];
 
 export const successStoryData = [
@@ -119,7 +117,7 @@ export const testimonialsData = [
     designation: "Digital Nomad",
     titleclass: "text-text-900",
     descriptionclass: "text-black-600",
-    customclass: '#D1D1D1',
+    customclass: "#D1D1D1",
     bg: "bg-white border border-neutral-300",
   },
   {
@@ -132,7 +130,7 @@ export const testimonialsData = [
     designation: "IT Manager",
     titleclass: "text-white",
     descriptionclass: "text-[#ACACAC]",
-    customclass: '#5E7085',
+    customclass: "#5E7085",
     bg: "bg-main-600",
   },
   {
@@ -145,7 +143,7 @@ export const testimonialsData = [
     designation: "Frequent Flyer",
     titleclass: "text-text-900",
     descriptionclass: "text-black-600",
-    customclass: '#D1D1D1',
+    customclass: "#D1D1D1",
     bg: "bg-white border border-neutral-300",
   },
   {
@@ -158,7 +156,7 @@ export const testimonialsData = [
     designation: "Backpacker",
     titleclass: "text-white",
     descriptionclass: "text-[#ACACAC]",
-    customclass: '#5E7085',
+    customclass: "#5E7085",
     bg: "bg-main-600",
   },
   {
@@ -171,7 +169,7 @@ export const testimonialsData = [
     designation: "Solo Traveler",
     titleclass: "text-text-900",
     descriptionclass: "text-black-600",
-    customclass: '#D1D1D1',
+    customclass: "#D1D1D1",
     bg: "bg-white border border-neutral-300",
   },
   {
@@ -184,7 +182,7 @@ export const testimonialsData = [
     designation: "Business Traveler",
     titleclass: "text-white",
     descriptionclass: "text-[#ACACAC]",
-    customclass: '#5E7085',
+    customclass: "#5E7085",
     bg: "bg-main-600",
   },
 ];
