@@ -22,7 +22,7 @@ const LetsTalkHome = () => {
         </div>
 
         <div className="flex justify-center w-full">
-          <form className="rounded-2xl border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[55px] md:h-[75px] flex items-center justify-between gap-2 lg:gap-4 bg-white w-full max-w-[423px]">
+          <form className="rounded-xl border border-[#494949] ps-6 py-3 pe-1 md:pe-3 h-[55px] md:h-[75px] flex items-center justify-between gap-2 lg:gap-4 bg-white w-full max-w-[423px]">
             <input
               type="email"
               placeholder="Your email"

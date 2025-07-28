@@ -93,7 +93,7 @@ export default function Destinations() {
         </div>
 
         {/* Search Input */}
-        <div className="relative flex items-center max-w-2xl mx-auto mb-6 py-2 lg:py-3 pl-4 lg:pl-6 pr-2 lg:pr-3 rounded-2xl border border-neutral-400">
+        <div className="relative flex items-center max-w-2xl mx-auto mb-6 py-2 lg:py-3 pl-4 lg:pl-6 pr-2 lg:pr-3 rounded-xl border border-neutral-400">
           <span className="mr-3">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@ export default function Destinations() {
           <button
             type="button"
             disabled={loading}
-            className={`bg-secondary-600 text-white ml-2 py-2 lg:py-3 pr-2 lg:pr-3 pl-3 lg:pl-5 rounded-xl text-sm lg:text-lg font-normal flex items-center gap-4 transition-opacity ${
+            className={`bg-secondary-600 text-white ml-2 py-2 lg:py-3 pr-2 lg:pr-3 pl-3 lg:pl-5 rounded-[9px] text-sm lg:text-lg font-normal flex items-center gap-4 transition-opacity ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
           >
