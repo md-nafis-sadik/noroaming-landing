@@ -4,13 +4,16 @@ import { useEffect, useRef, useState } from "react";
 import TextFadeIn from "../animations/TextFadeIn";
 
 
-function useCountUp(start: number, end: number, duration: number, trigger: boolean) {
+// Modified useCountUp hook
+function useCountUp(start: number, end: number, duration: number, trigger: boolean): number {
   const [count, setCount] = useState(start);
 
   useEffect(() => {
-    if (!trigger) return;
+    // Only run on client side
+    if (typeof window === 'undefined' || !trigger) return;
 
     let startTime: number | null = null;
+    let animationFrameId: number;
 
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
@@ -20,14 +23,18 @@ function useCountUp(start: number, end: number, duration: number, trigger: boole
       setCount(value);
 
       if (progressRatio < 1) {
-        requestAnimationFrame(step);
+        animationFrameId = requestAnimationFrame(step);
       }
     };
 
-    requestAnimationFrame(step);
+    animationFrameId = requestAnimationFrame(step);
+
+    return () => {
+      cancelAnimationFrame(animationFrameId);
+    };
   }, [trigger, start, end, duration]);
 
-  return count;
+  return trigger ? count : start; // Return start value during SSR
 }
 
 const IntroHome = () => {
