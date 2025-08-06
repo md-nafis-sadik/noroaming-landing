@@ -78,7 +78,9 @@ const Navbar: FC = () => {
                   alt="Company logo"
                   width={173}
                   height={35}
-                  priority
+                  sizes="(max-width: 768px) 120px, 173px"
+                  priority={true} // Only if above the fold
+                  className="w-auto h-[35px]"
                 />
               ) : (
                 <Image
@@ -86,7 +88,9 @@ const Navbar: FC = () => {
                   alt="Company logo"
                   width={173}
                   height={35}
-                  priority
+                  sizes="(max-width: 768px) 120px, 173px"
+                  priority={true} // Only if above the fold
+                  className="w-auto h-[35px]"
                 />
               )}
             </div>

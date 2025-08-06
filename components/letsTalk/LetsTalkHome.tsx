@@ -1,23 +1,31 @@
-import { cn } from "@/lib/utils";;
+import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
 
 const LetsTalkHome = () => {
   return (
-    <section id="contact" className="containerX py-6 lg:py-10 my-6 lg:my-10 font-inter">
-      <div style={{
-        background: `
+    <section
+      id="contact"
+      className="containerX py-6 lg:py-10 my-6 lg:my-10 font-inter"
+    >
+      <div
+        style={{
+          background: `
       radial-gradient(ellipse at 30% 70%, #033877 0%, #000 100%)
     `,
-        backgroundBlendMode: 'overlay'
-      }} className="rounded-3xl px-6 py-[60px] md:py-20 items-center space-y-6 justify-between">
+          backgroundBlendMode: "overlay",
+        }}
+        className="rounded-3xl px-6 py-[60px] md:py-20 items-center space-y-6 justify-between"
+      >
         <div>
           <div>
-            <h2 className="text-center max-w-3xl mx-auto leading-[40px] text-2xl md:text-[24px] xl:text-[36px] font-bold text-white">
+            <p className="text-center max-w-3xl mx-auto leading-[40px] text-2xl md:text-[24px] xl:text-[36px] font-bold text-white">
               Ready to level up your investment and business process?
-            </h2>
+            </p>
             <p className="text-center max-w-xl mx-auto font-extralight mt-4 lg:mt-6 text-text-100 text-sm md:text-base lg:text-lg">
-              Supports <b className="font-semibold text-text-50">eSim</b> and beginners with simple invoicing,
-              powerful integrations, and cash flow management tools.</p>
+              Supports <b className="font-semibold text-text-50">eSim</b> and
+              beginners with simple invoicing, powerful integrations, and cash
+              flow management tools.
+            </p>
           </div>
         </div>
 
@@ -42,6 +50,5 @@ const LetsTalkHome = () => {
     </section>
   );
 };
-
 
 export default LetsTalkHome;

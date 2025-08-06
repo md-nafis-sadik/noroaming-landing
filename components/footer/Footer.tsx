@@ -21,11 +21,12 @@ const Footer = () => {
     <footer className="bg-white relative font-inter">
       <div className="absolute bottom-0 left-0 h-[405px] w-[290px]">
         <Image
-          alt="hero star glass image"
+          alt="footer background image"
           src={images.FooterBackground}
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 290px, 290px"
           className="object-contain"
+          priority={false} // since it's decorative
         />
       </div>
       <div className="py-6 lg:py-20">
@@ -39,7 +40,10 @@ const Footer = () => {
                     <Image
                       alt="logo"
                       src={images.LogoWhite}
-                      className="w-[173px]"
+                      width={173}
+                      height={40} // adjust based on actual aspect ratio
+                      className="w-[173px] h-auto" // maintain aspect ratio
+                      priority={false}
                     />
                   </div>
                 </Link>
@@ -141,7 +145,9 @@ const Footer = () => {
                     </svg>
                   </div>
 
-                  <p className="footer_el_text text-center lg:text-left">{footerData.contact.address}</p>
+                  <p className="footer_el_text text-center lg:text-left">
+                    {footerData.contact.address}
+                  </p>
                 </div>
                 {/* <div className="flex items-center lg:items-start justify-center lg:justify-start gap-3 mt-3 lg:mt-4 lg:mt-6">
                   <div className="text-sm lg:text-base">
@@ -187,7 +193,9 @@ const Footer = () => {
                       />
                     </svg>
                   </div>
-                  <p className="footer_el_text text-center lg:text-left">{footerData.contact.email}</p>
+                  <p className="footer_el_text text-center lg:text-left">
+                    {footerData.contact.email}
+                  </p>
                 </div>
               </ul>
             </div>

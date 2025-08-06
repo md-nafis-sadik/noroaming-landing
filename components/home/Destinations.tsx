@@ -186,9 +186,9 @@ export default function Destinations() {
                 )}
                 <div className="flex justify-between items-end">
                   <div className="text-start">
-                    <h4 className="font-semibold text-base:text-lg">
+                    <p className="font-semibold text-base:text-lg">
                       {item.name}
-                    </h4>
+                    </p>
                     <p className="text-xs lg:text-sm text-gray-500">
                       {item.price}
                     </p>

@@ -135,9 +135,11 @@ const HeroHome = () => {
               ref={imageRef}
               alt="hero star glass image"
               src={images.hero}
-              className="h-full w-full object-contain sm:object-cover"
               fill
-              priority
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 59vw"
+              className="h-full w-full object-contain sm:object-cover"
+              priority={true}
+              quality={85}
             />
           </div>
         </div>
