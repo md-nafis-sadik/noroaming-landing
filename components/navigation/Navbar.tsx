@@ -150,9 +150,9 @@ const Navbar: FC = () => {
         <div className="flex flex-row items-center gap-2 md:gap-3">
           {/* DOWNLOAD APP */}
           <Link href="https://play.google.com/store/apps/details?id=com.noroaming.app&pcampaignid=web_share">
-            <Button className="hidden md:flex bg-secondary-600 hover:bg-secondary-700 flex_center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm">
+            <span className="hidden md:flex bg-secondary-600 hover:bg-secondary-700 flex_center gap-2 group px-3 md:px-5 py-3 font-semibold text-white text-sm rounded-lg">
               <span className="!leading-none">Download App</span>
-            </Button>
+            </span>
           </Link>
 
           {/* MOBILE MENU */}

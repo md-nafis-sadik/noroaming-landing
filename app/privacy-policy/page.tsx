@@ -1,6 +1,6 @@
 function PrivacyPolicy() {
   return (
-    <section className="containerX mx-auto py-12 font-inter">
+    <div className="containerX mx-auto py-12 font-inter">
       <div className="mb-12">
         <p className="text-4xl font-bold mb-4" style={{ color: "#001C3E" }}>
           Privacy Policy
@@ -265,7 +265,7 @@ function PrivacyPolicy() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 

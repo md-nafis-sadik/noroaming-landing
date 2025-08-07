@@ -2,19 +2,11 @@
 
 import { cn } from "@/lib/utils";
 import {
-  FacebookLineIcon,
   images,
-  InstaLineIcon,
-  LinkedInLineIcon,
-  TwitterLineIcon,
-  YoutubeLineIcon,
 } from "@/services";
 import Image from "next/image";
 import { footerData } from "@/services/data";
 import Link from "next/link";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useEffect, useRef } from "react";
 
 const Footer = () => {
   return (
@@ -126,7 +118,7 @@ const Footer = () => {
               >
                 {footerData.contact.title}
               </p>
-              <ul className="mt-4 lg:mt-6">
+              <div className="mt-4 lg:mt-6">
                 <div className="flex flex-col lg:flex-row items-center lg:items-start justify-center lg:justify-start gap-3">
                   <div className="text-sm lg:text-base">
                     <svg
@@ -197,7 +189,7 @@ const Footer = () => {
                     {footerData.contact.email}
                   </p>
                 </div>
-              </ul>
+              </div>
             </div>
           </div>
         </div>

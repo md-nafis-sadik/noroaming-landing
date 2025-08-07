@@ -1,34 +1,37 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import TextFadeIn from "../animations/TextFadeIn";
-import ReactCountryFlag from "react-world-flags";
+import { useRef, useState } from "react";
 import { SearchIcon } from "lucide-react";
+import TextFadeIn from "../animations/TextFadeIn";
+import Image, { StaticImageData } from "next/image";
+import { images } from "@/services";
 
 type Destination = {
   name: string;
   code: string;
   price: string;
+  source: StaticImageData;
 };
 
 const COUNTRIES: Destination[] = [
-  { name: "Switzerland", code: "ch", price: "From €3.99" },
-  { name: "Germany", code: "de", price: "From €3.99" },
-  { name: "Italy", code: "it", price: "From €3.99" },
-  { name: "Austria", code: "at", price: "From €3.99" },
-  { name: "Netherlands", code: "nl", price: "From €3.99" },
-  { name: "United Kingdom", code: "gb", price: "From €3.99" },
+  { name: "Switzerland", code: "ch", price: "From €3.99", source: images.ch },
+  { name: "Germany", code: "de", price: "From €3.99", source: images.de },
+  { name: "Italy", code: "it", price: "From €3.99", source: images.it },
+  { name: "Austria", code: "at", price: "From €3.99", source: images.at },
+  { name: "Netherlands", code: "nl", price: "From €3.99", source: images.nl },
+  {
+    name: "United Kingdom",
+    code: "gb",
+    price: "From €3.99",
+    source: images.gb,
+  },
 ];
 
 const REGIONS: Destination[] = [
-  { name: "Europe", code: "eu", price: "From €5.99" },
-  { name: "Asia", code: "as", price: "From €4.99" },
-  { name: "Balkans", code: "bl", price: "From €6.99" },
+  { name: "Europe", code: "eu", price: "From €5.99", source: images.ch },
+  { name: "Asia", code: "as", price: "From €4.99", source: images.de },
+  { name: "Balkans", code: "bl", price: "From €6.99", source: images.it },
 ];
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function Destinations() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -40,34 +43,10 @@ export default function Destinations() {
   const [showAll, setShowAll] = useState(false);
 
   const data = activeTab === "Countries" ? COUNTRIES : REGIONS;
-
   const filtered = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
-
   const visibleItems = showAll || search ? filtered : filtered.slice(0, 6);
-
-  useEffect(() => {
-    if (!containerRef.current) return;
-    const cards: HTMLElement[] = Array.from(
-      containerRef.current.children
-    ) as HTMLElement[];
-    gsap.set(cards, { opacity: 0, y: 50 });
-    cards.forEach((card, index) => {
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: index * 0.1,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-        },
-      });
-    });
-    return () => ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-  }, [visibleItems]);
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -83,7 +62,7 @@ export default function Destinations() {
   };
 
   return (
-    <section id="pricing" className="py-14 font-inter">
+    <div id="pricing" className="py-14 font-inter">
       <div className="containerX mx-auto text-center">
         <div className="flex justify-center items-center w-full mx-auto">
           <TextFadeIn
@@ -149,40 +128,30 @@ export default function Destinations() {
           <div className="mb-4 text-xl md:text-2xl xl:text-4xl font-semibold text-text-850">
             Choose your destination
           </div>
-          {/* <div className="flex justify-center gap-4">
-            <button
-              className={`px-4 lg:px-6 py-2 h-11 lg:h-auto lg:py-3 text-sm lg:text-base rounded-xl ${activeTab === 'Countries' ? 'bg-main-600 text-white font-semibold' : 'bg-white text-main-600 border border-main-600 font-medium'}`}
-              onClick={() => handleTabChange('Countries')}
-            >
-              Countries
-            </button>
-            <button
-              className={`px-4 lg:px-6 py-2 h-11 lg:h-auto lg:py-3 text-sm lg:text-base rounded-xl ${activeTab === 'Regions' ? 'bg-main-600 text-white font-semibold' : 'bg-white text-main-600 border border-main-600 font-medium'}`}
-              onClick={() => handleTabChange('Regions')}
-            >
-              Regions
-            </button>
-          </div> */}
         </div>
 
         {/* Destination Cards */}
         <div
           ref={containerRef}
+          suppressHydrationWarning
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
         >
           {visibleItems.map((item) => (
             <div
-              key={`${activeTab}-${item.code}`}
-              className="border p-4 lg:p-6 rounded-xl bg-white hover:shadow-md transition-all cursor-pointer"
+              key={item.code}
+              className="border p-4 lg:p-6 rounded-xl bg-white hover:shadow-md transition-all cursor-pointer animate-fadeInUp"
             >
               <div className="flex flex-col gap-4 lg:gap-6">
                 {activeTab === "Countries" && (
-                  <ReactCountryFlag
-                    code={item.code.toLowerCase()}
-                    className="w-7 lg:w-9 h-7 lg:h-9"
-                    style={{ objectFit: "cover", borderRadius: "100%" }}
-                    alt={`Flag of ${item.name}`}
-                  />
+                  <div className="w-7 lg:w-9 h-7 lg:h-9 flex items-center justify-center overflow-hidden rounded-full">
+                    <Image
+                      src={item.source}
+                      alt={`${item} flag`}
+                      width={36}
+                      height={36}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 )}
                 <div className="flex justify-between items-end">
                   <div className="text-start">
@@ -212,15 +181,7 @@ export default function Destinations() {
             </div>
           ))}
         </div>
-
-        {/* <button
-          onClick={() => setShowAll(true)}
-          className="text-sm lg:text-base mt-8 lg:mt-12 px-6 py-3 rounded-xl bg-black text-white font-semibold"
-          disabled={showAll || filtered.length <= 6}
-        >
-          {showAll ? 'All Destinations Shown' : 'View All Destinations'}
-        </button> */}
       </div>
-    </section>
+    </div>
   );
 }

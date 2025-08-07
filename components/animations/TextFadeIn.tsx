@@ -95,6 +95,8 @@ const TextFadeIn: React.FC<TextFadeInProps> = ({ text, className = "", extraClas
     }
   }, [text]);
 
+  
+
   return (
     <div
       ref={containerRef}

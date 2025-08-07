@@ -62,7 +62,7 @@ const HeroHome = () => {
   }, []);
 
   return (
-    <section
+    <div
       ref={sectionRef}
       className="relative pt-[120px] lg:pt-[170px] font-inter"
       style={{
@@ -72,7 +72,7 @@ const HeroHome = () => {
         backgroundBlendMode: "overlay",
       }}
     >
-      <section className="containerX relative min-h-[630px] font-[600] w-full pt-10 lg:pt-0 pb-0">
+      <div className="containerX relative min-h-[630px] font-[600] w-full pt-10 lg:pt-0 pb-0">
         <div className="flex flex-col lg:flex-row">
           {/* Left portion */}
           <div
@@ -143,8 +143,8 @@ const HeroHome = () => {
             />
           </div>
         </div>
-      </section>
-    </section>
+      </div>
+    </div>
   );
 };
 

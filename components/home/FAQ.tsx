@@ -68,7 +68,7 @@ const FAQ = () => {
   }, []);
 
   return (
-    <section className="bg-white font-inter flex_center flex-col w-full py-16 lg:py-20">
+    <div className="bg-white font-inter flex_center flex-col w-full py-16 lg:py-20">
       <div className="text-center">
         <p className="text-base lg:text-lg text-main-600 bg-neutral-100 border border-neutral-300 tracking-wide mb-4 inline-block py-2 px-5 rounded-full">
           FAQ
@@ -109,7 +109,7 @@ const FAQ = () => {
           ))}
         </Accordion>
       </div>
-    </section>
+    </div>
   );
 };
 

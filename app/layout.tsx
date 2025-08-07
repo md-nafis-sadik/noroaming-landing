@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg", // Path to your favicon in the public directory
   },
+  other: {
+    "format-detection": "telephone=no, date=no, email=no, address=no",
+  },
 };
 
 const RootLayout = ({

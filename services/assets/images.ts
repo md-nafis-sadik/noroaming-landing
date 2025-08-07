@@ -17,4 +17,10 @@ export { default as collaborator3 } from "@/public/images/colaborators/collabora
 export { default as collaborator4 } from "@/public/images/colaborators/collaborator4.png";
 export { default as collaborator5 } from "@/public/images/colaborators/collaborator5.png";
 export { default as collaborator6 } from "@/public/images/colaborators/collaborator6.png";
+export { default as ch } from "@/public/images/flags/Flag_of_Switzerland.png";
+export { default as de } from "@/public/images/flags/Flag_of_Germany.png";
+export { default as it } from "@/public/images/flags/Flag_of_Italy.png";
+export { default as at } from "@/public/images/flags/Flag_of_Austria.png";
+export { default as nl } from "@/public/images/flags/Flag_of_the_Netherlands.png";
+export { default as gb } from "@/public/images/flags/Flag_of_the_United_Kingdom.png";
 

@@ -90,9 +90,9 @@ const NavigationSheet: FC<IFNavigationSheetProps> = ({
             passHref
             legacyBehavior
           >
-            <a className="flex bg-secondary-600 hover:bg-secondary-700 items-center justify-center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm px-6 py-3 rounded-md">
+            <span className="flex bg-secondary-600 hover:bg-secondary-700 items-center justify-center gap-2 group ps-3 md:px-5 font-semibold text-white text-sm px-6 py-3 rounded-md">
               <span className="!leading-none px-4">Download App</span>
-            </a>
+            </span>
           </Link>
           {/* <div className="flex flex-row items-center gap-3">
             {socialsData.map(({ link, icon }, index) => (

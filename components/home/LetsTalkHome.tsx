@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const LetsTalkHome = () => {
   return (
-    <section
+    <div
       id="contact"
       className="containerX py-6 lg:py-10 my-6 lg:my-10 font-inter"
     >
@@ -47,7 +47,7 @@ const LetsTalkHome = () => {
           </form>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

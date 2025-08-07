@@ -3,7 +3,7 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 interface GradientButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   className?: string;
   bgClassName?: string;
@@ -11,7 +11,7 @@ interface GradientButtonProps
 }
 
 export const GradientButton = React.forwardRef<
-  HTMLButtonElement,
+  HTMLDivElement,
   GradientButtonProps
 >(
   (
@@ -31,17 +31,17 @@ export const GradientButton = React.forwardRef<
           borderClassName
         )}
       >
-        <button
+        <div
           ref={ref}
           className={cn(
-            "flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 font-inter shrink-0",
+            "flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-white font-medium transition-all duration-300 font-inter shrink-0 cursor-pointer",
             bgClassName,
             className
           )}
           {...props}
         >
           {children}
-        </button>
+        </div>
       </div>
     );
   }

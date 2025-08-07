@@ -6,7 +6,7 @@ import TextFadeIn from "../animations/TextFadeIn";
 
 export default function WhyChoose() {
   return (
-    <section
+    <div
       id="about"
       className="py-4 font-inter lg:py-7 xl:py-10 containerX mx-auto bg-white"
     >
@@ -87,6 +87,6 @@ export default function WhyChoose() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
