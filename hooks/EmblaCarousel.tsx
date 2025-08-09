@@ -1,19 +1,9 @@
 "use client";
+
 import { useCallback } from "react";
+import type { EmblaCarouselType } from "embla-carousel";
 
-// Define the type for the Embla API
-interface EmblaApi {
-  scrollPrev: () => void;
-  scrollNext: () => void;
-  canScrollPrev: () => boolean;
-  canScrollNext: () => boolean;
-  on: (event: string, callback: (api: EmblaApi) => void) => EmblaApi;
-}
-
-const useEmblaButtons = (emblaApi: any) => {
-  //   const [prevBtnDisabled, setPrevBtnDisabled] = useState<boolean>(true);
-  //   const [nextBtnDisabled, setNextBtnDisabled] = useState<boolean>(true);
-
+const useEmblaButtons = (emblaApi: EmblaCarouselType | null) => {
   const onPrevButtonClick = useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
@@ -24,21 +14,7 @@ const useEmblaButtons = (emblaApi: any) => {
     emblaApi.scrollNext();
   }, [emblaApi]);
 
-  //   const onSelect = useCallback((emblaApi: EmblaApi) => {
-  //     setPrevBtnDisabled(!emblaApi.canScrollPrev());
-  //     setNextBtnDisabled(!emblaApi.canScrollNext());
-  //   }, []);
-
-  //   useEffect(() => {
-  //     if (!emblaApi) return;
-
-  //     onSelect(emblaApi);
-  //     emblaApi.on("reInit", onSelect).on("select", onSelect);
-  //   }, [emblaApi, onSelect]);
-
   return {
-    // prevBtnDisabled,
-    // nextBtnDisabled,
     onPrevButtonClick,
     onNextButtonClick,
   };

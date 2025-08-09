@@ -8,7 +8,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FC, useEffect, useState } from "react";
 import NavigationSheet from "./NavigationSheet";
-import { Button } from "../ui/button";
 import { images } from "@/services";
 import Image from "next/image";
 
@@ -17,19 +16,17 @@ const Navbar: FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState("");
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Client-side only code
+    setIsClient(true); // mark as client after mount
+
+    // Initial state on mount
     setIsScrolled(window.scrollY > 10);
     setActiveHash(window.location.hash);
 
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    const handleHashChange = () => {
-      setActiveHash(window.location.hash);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 10);
+    const handleHashChange = () => setActiveHash(window.location.hash);
 
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("hashchange", handleHashChange);
@@ -40,21 +37,42 @@ const Navbar: FC = () => {
     };
   }, []);
 
-  // Helper function that works on both server and client
-  const isActive = (link: string) => {
-    if (link === "/") return pathname === "/" && !activeHash;
-    return activeHash === link;
-  };
+  // Render simplified placeholder on SSR to avoid hydration mismatch
+  if (!isClient) {
+    return (
+      <nav className="sticky top-0 z-50 bg-transparent font-inter">
+        <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8">
+          <Link href={routes.homepage.link} className="h-fit">
+            <div className="flex items-center gap-2">
+              <Image
+                src={images.Logo}
+                alt="Company logo"
+                width={173}
+                height={35}
+                sizes="(max-width: 768px) 120px, 173px"
+                priority={true}
+                className="w-auto h-[35px]"
+              />
+            </div>
+          </Link>
+          {/* Minimal nav placeholder */}
+          <div className="hidden min-[1160px]:flex flex-row items-center bg-[#00214A] rounded-full py-3 px-15 min-w-[513px] min-h-[57px]">
+            {/* Could optionally map navbarData here if static */}
+          </div>
+          <div className="flex flex-row items-center gap-2 md:gap-3">
+            <span className="hidden md:flex bg-secondary-600 flex_center gap-2 px-3 md:px-5 py-3 font-semibold text-white text-sm rounded-lg">
+              Download App
+            </span>
+            <div className="lg:hidden flex cursor-pointer">
+              <MenuIcon className="!h-5 !w-5 !shrink-0" color="black" />
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+  // Full navbar after client hydration
   return (
     <nav
       className={cn(
@@ -64,8 +82,8 @@ const Navbar: FC = () => {
             ? "bg-white lg:bg-transparent border-b lg:border-none border-natural-300"
             : "bg-transparent"
           : isScrolled
-          ? "bg-white lg:bg-transparent border-b lg:border-none border-natural-300"
-          : "bg-transparent"
+            ? "bg-white lg:bg-transparent border-b lg:border-none border-natural-300"
+            : "bg-transparent"
       )}
     >
       <div className="containerX flex flex-row items-center justify-between gap-4 py-4 lg:py-8">
@@ -79,7 +97,7 @@ const Navbar: FC = () => {
                   width={173}
                   height={35}
                   sizes="(max-width: 768px) 120px, 173px"
-                  priority={true} // Only if above the fold
+                  priority={true}
                   className="w-auto h-[35px]"
                 />
               ) : (
@@ -89,7 +107,7 @@ const Navbar: FC = () => {
                   width={173}
                   height={35}
                   sizes="(max-width: 768px) 120px, 173px"
-                  priority={true} // Only if above the fold
+                  priority={true}
                   className="w-auto h-[35px]"
                 />
               )}
@@ -107,9 +125,9 @@ const Navbar: FC = () => {
                 <span
                   className={cn(
                     pathname === link &&
-                      (pathname === routes.homepage.link
-                        ? "navbar-btn-gradient-dark"
-                        : "navbar-btn-gradient-lite"),
+                    (pathname === routes.homepage.link
+                      ? "navbar-btn-gradient-dark"
+                      : "navbar-btn-gradient-lite"),
                     "block navbar-btn-gradient absolute w-full h-1/2 bottom-0 left-0 z-[1]"
                   )}
                 />
@@ -133,16 +151,6 @@ const Navbar: FC = () => {
                   />
                 )}
               </Link>
-              {/* {index < navbarData.length - 1 && (
-                <Dividericon
-                  className="w-[7px] h-7"
-                  color={
-                    pathname === routes.homepage.link
-                      ? colors.natural[900]
-                      : colors.natural[200]
-                  }
-                />
-              )} */}
             </div>
           ))}
         </div>

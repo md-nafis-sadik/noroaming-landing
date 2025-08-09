@@ -8,22 +8,25 @@ import Autoplay from "embla-carousel-autoplay";
 import { testimonialsData } from "@/services/data/shared.data";
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import TextFadeIn from '../animations/TextFadeIn';
+import type { EmblaCarouselType } from "embla-carousel";
 
 const Testimonial = () => {
   const autoplayOptions = { delay: 3000 };
-  const options = { 
-    align: "start", 
+  const options = {
+    align: "start",
     loop: true,
     breakpoints: {
       '(min-width: 1024px)': { slidesToScroll: 3, slidesToShow: 3 },
       '(min-width: 768px)': { slidesToScroll: 2, slidesToShow: 2 },
     }
   } as const;
-  
+
   const [emblaRef, emblaApi] = useEmblaCarousel(options, [
     Autoplay(autoplayOptions),
   ]);
-  const { onPrevButtonClick, onNextButtonClick } = useEmblaButtons(emblaApi);
+
+  const { onPrevButtonClick, onNextButtonClick } = useEmblaButtons(emblaApi as EmblaCarouselType | null);
+
   const [hovered, setHovered] = useState(false);
 
   return (

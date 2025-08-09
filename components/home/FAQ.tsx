@@ -87,7 +87,7 @@ const FAQ = () => {
           type="single"
           collapsible
           defaultValue="item-0"
-          className="w-full mx-auto flex flex-col gap-3"
+          className="w-full min-w-full mx-auto flex flex-col gap-3"
         >
           {faqData.map(({ question, answer }, index) => (
             <AccordionItem key={index} value={`item-${index}`}>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { SearchIcon } from "lucide-react";
 import TextFadeIn from "../animations/TextFadeIn";
 import Image, { StaticImageData } from "next/image";
@@ -35,18 +35,30 @@ const REGIONS: Destination[] = [
 
 export default function Destinations() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const [activeTab, setActiveTab] = useState<"Countries" | "Regions">(
-    "Countries"
-  );
+  const [activeTab, setActiveTab] = useState<"Countries" | "Regions">("Countries");
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
   const [showAll, setShowAll] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  // Mark hydration complete
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const data = activeTab === "Countries" ? COUNTRIES : REGIONS;
+
+  // Filter based on search
   const filtered = data.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
   );
-  const visibleItems = showAll || search ? filtered : filtered.slice(0, 6);
+
+  // Determine which items to show
+  const visibleItems = isClient
+    ? showAll || search
+      ? filtered
+      : filtered.slice(0, 6)
+    : filtered.slice(0, 6); // server and first client render always first 6 items
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearch(e.target.value);
@@ -67,7 +79,7 @@ export default function Destinations() {
         <div className="flex justify-center items-center w-full mx-auto">
           <TextFadeIn
             text="Discover our more than 200+ destinations"
-            className="text-2xl md:text-5xl max-w-2xl lg:text-[48px] font-[700] !leading-[1.2] text-text-850 tracking-wide mb-6"
+            className="text-2xl md:text-5xl max-w-2xl lg:text-[48px] font-[700] !leading-[1.2] lg:justify-center text-text-850 tracking-wide mb-6"
           />
         </div>
 
@@ -133,7 +145,6 @@ export default function Destinations() {
         {/* Destination Cards */}
         <div
           ref={containerRef}
-          suppressHydrationWarning
           className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
         >
           {visibleItems.map((item) => (
@@ -146,7 +157,7 @@ export default function Destinations() {
                   <div className="w-7 lg:w-9 h-7 lg:h-9 flex items-center justify-center overflow-hidden rounded-full">
                     <Image
                       src={item.source}
-                      alt={`${item} flag`}
+                      alt={`${item.name} flag`}
                       width={36}
                       height={36}
                       className="w-full h-full object-cover"
@@ -155,12 +166,8 @@ export default function Destinations() {
                 )}
                 <div className="flex justify-between items-end">
                   <div className="text-start">
-                    <p className="font-semibold text-base:text-lg">
-                      {item.name}
-                    </p>
-                    <p className="text-xs lg:text-sm text-gray-500">
-                      {item.price}
-                    </p>
+                    <p className="font-semibold text-base:text-lg">{item.name}</p>
+                    <p className="text-xs lg:text-sm text-gray-500">{item.price}</p>
                   </div>
                   <span>
                     <svg

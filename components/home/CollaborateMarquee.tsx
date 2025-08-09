@@ -1,3 +1,5 @@
+"use client";
+
 import { images } from "@/services";
 import Marquee from "../ui/marquee";
 import Image, { StaticImageData } from "next/image";
@@ -28,7 +30,8 @@ const CollaborateMarquee = () => {
                 Our globally recognized trusted partners
             </p>
 
-            <Marquee pauseOnHover className="[--duration:20s] mt-6 md:mt-7 lg:mt-8">
+            <Marquee pauseOnHover className="mt-6 md:mt-7 lg:mt-8" style={{ "--duration": "20s" } as React.CSSProperties}>
+
                 {collaborators.map(({ _id, image, alt }) => (
                     <Image
                         src={image}

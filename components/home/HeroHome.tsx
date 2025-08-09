@@ -1,8 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useState, useCallback } from "react";
 import TextFadeIn from "../animations/TextFadeIn";
 import AnimatedText from "../ui/AnimatedTitle";
 import { GradientButton } from "../ui/gradient-button";
@@ -10,65 +8,45 @@ import Image from "next/image";
 import { DownloadAppIcon, DownloadAppleAppIcon, images } from "@/services";
 import Link from "next/link";
 
-// Import other components & assets...
-// (your existing imports)
-
-gsap.registerPlugin(ScrollTrigger);
-
 const HeroHome = () => {
-  const sectionRef = useRef(null);
-  const imageRef = useRef<HTMLImageElement | null>(null);
-  const textBlockRef = useRef<HTMLDivElement | null>(null);
+  const [textVisible, setTextVisible] = useState(false);
+  const [imageVisible, setImageVisible] = useState(false);
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Animate text from bottom
-      gsap.fromTo(
-        textBlockRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            once: true,
-          },
+  // Observe the text block container
+  const textBlockRef = useCallback((node: HTMLDivElement | null) => {
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setTextVisible(true);
+          observer.unobserve(node);
         }
-      );
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(node);
+  }, []);
 
-      // Animate image
-      gsap.fromTo(
-        imageRef.current,
-        { opacity: 0, y: 40 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1.2,
-          delay: 0.2,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: "top 80%",
-            once: true,
-          },
+  // Observe the image container
+  const imageRef = useCallback((node: HTMLDivElement | null) => {
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setImageVisible(true);
+          observer.unobserve(node);
         }
-      );
-    }, sectionRef);
-
-    return () => ctx.revert();
+      },
+      { threshold: 0.2 }
+    );
+    observer.observe(node);
   }, []);
 
   return (
     <div
-      ref={sectionRef}
       className="relative pt-[120px] lg:pt-[170px] font-inter"
       style={{
-        background: `
-      radial-gradient(ellipse at 50% 80%, #033877 0%, #000 100%)
-    `,
+        background: `radial-gradient(ellipse at 50% 80%, #033877 0%, #000 100%)`,
         backgroundBlendMode: "overlay",
       }}
     >
@@ -77,7 +55,9 @@ const HeroHome = () => {
           {/* Left portion */}
           <div
             ref={textBlockRef}
-            className="flex flex-col w-full lg:w-[48%] pb-10"
+            className={`flex flex-col w-full lg:w-[48%] pb-10 transition-all duration-1000 ease-out ${
+              textVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
           >
             <div className="w-full lg:w-auto flex items-center justify-center lg:justify-start gap-[10px] mb-3.5 font-normal">
               <div className="bg-paste-600 rounded-lg text-xs lg:text-sm py-[6px] px-4 text-main-600">
@@ -117,12 +97,8 @@ const HeroHome = () => {
                     <DownloadAppleAppIcon className="w-5 lg:w-auto" />
                   </div>
                   <div className="!leading-none text-left">
-                    <div className="text-[8px] lg:text-[9px]">
-                      Download on the
-                    </div>
-                    <div className="text-sm lg:text-lg mt-[-2px] lg:mt-[-3px]">
-                      App Store
-                    </div>
+                    <div className="text-[8px] lg:text-[9px]">Download on the</div>
+                    <div className="text-sm lg:text-lg mt-[-2px] lg:mt-[-3px]">App Store</div>
                   </div>
                 </GradientButton>
               </Link>
@@ -130,9 +106,13 @@ const HeroHome = () => {
           </div>
 
           {/* Right portion */}
-          <div className="relative lg:absolute lg:right-0 lg:bottom-0 w-full h-[212px] sm:h-[480px] md:h-[680px] lg:w-[59%] lg:h-[500px] xl:h-[620px] 2xl:h-[720px]">
+          <div
+            ref={imageRef}
+            className={`relative lg:absolute lg:right-0 lg:bottom-0 w-full h-[212px] sm:h-[480px] md:h-[680px] lg:w-[59%] lg:h-[500px] xl:h-[620px] 2xl:h-[720px] transition-all duration-1200 ease-out delay-200 ${
+              imageVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+            }`}
+          >
             <Image
-              ref={imageRef}
               alt="hero star glass image"
               src={images.hero}
               fill

@@ -21,31 +21,39 @@ const TestimonialCard = ({
   customclass,
   bg,
   titleclass,
-  descriptionclass
+  descriptionclass,
 }: IFTestimonialCard) => {
   return (
-    <div className={`flex h-full rounded-2xl ${bg} flex-col justify-between flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] select-none p-6 lg:p-8`}>
+    <div
+      className={`flex h-full rounded-2xl ${bg} flex-col justify-between flex-[0_0_100%] md:flex-[0_0_calc(50%-12px)] select-none p-6 lg:p-8`}
+    >
       <div>
         <div className="w-full flex justify-start">
           <QuoteIconv3 className={`mb-6 lg:mb-8`} color={customclass} />
         </div>
-        <div className={`text-xs md:text-sm lg:text-base !leading-[1.6] text-left max-w-full ${titleclass}`}>
+        <div
+          className={`text-xs md:text-sm lg:text-base !leading-[1.6] text-left max-w-full ${titleclass}`}
+        >
           {message}
         </div>
       </div>
       <div className="flex gap-3 items-center mt-6 w-full justify-start">
         <Image
           src={avatar}
-          alt="avatar"
+          alt={`Avatar of ${name}`}
           className="w-[42px] md:w-[50px] h-[42px] md:h-[50px] rounded-full border-2 border-white"
-          width={500}
-          height={500}
+          width={50}
+          height={50}
         />
         <div className="flex flex-col">
-          <p className={`text-sm lg:text-base font-bold uppercase ${titleclass}`}>
+          <p
+            className={`text-sm lg:text-base font-bold uppercase ${titleclass}`}
+          >
             {name}
           </p>
-          <p className={`text-xs lg:text-sm ${descriptionclass}`}>{designation}</p>
+          <p className={`text-xs lg:text-sm ${descriptionclass}`}>
+            {designation}
+          </p>
         </div>
       </div>
     </div>

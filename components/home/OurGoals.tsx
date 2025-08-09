@@ -1,13 +1,10 @@
 "use client";
 
-import { useRef, useEffect } from "react";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-import { ConnectionIcon, ComputerIcon, images } from "@/services";
+import React, { useState, useCallback, useEffect } from "react";
+import { ConnectionIcon, ComputerIcon } from "@/services";
 import TextFadeIn from "../animations/TextFadeIn";
 import Image from "next/image";
 
-// Define TypeScript types
 type GoalItem = {
   title: string;
   description: string;
@@ -17,14 +14,16 @@ type GoalItem = {
   icon: React.ReactNode;
   bg: string;
   borderColor: string;
-  bgImage?: string; // Add this line
+  bgImage?: string;
 };
 
-// Register ScrollTrigger plugin
-gsap.registerPlugin(ScrollTrigger);
-
 export default function OurGoals() {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [visibleIndexes, setVisibleIndexes] = useState<Set<number>>(new Set());
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
 
   const goals: GoalItem[] = [
     {
@@ -46,7 +45,7 @@ export default function OurGoals() {
       customclass: "bg-main-600",
       bg: "bg-white text-main-600",
       borderColor: "border-yellow-200",
-      bgImage: "/images/card-background.png", // Add this line with your image path
+      bgImage: "/images/card-background.png",
     },
     {
       title: "Stay Connected",
@@ -60,43 +59,25 @@ export default function OurGoals() {
     },
   ];
 
-  useEffect(() => {
-    if (!containerRef.current) return;
+  // Setup intersection observer only on client and once node exists
+  const observeCard = useCallback(
+    (index: number) => (node: HTMLElement | null) => {
+      if (!node || !isClient) return;
 
-    // Get cards with proper typing
-    const cards: HTMLElement[] = Array.from(
-      containerRef.current.children
-    ) as HTMLElement[];
-
-    if (!cards.length) return;
-
-    // Set initial state
-    gsap.set(cards, {
-      opacity: 0,
-      y: 50,
-    });
-
-    // Create animation for each card
-    cards.forEach((card, index) => {
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        delay: index * 0.15,
-        ease: "back.out(1.2)",
-        scrollTrigger: {
-          trigger: card,
-          start: "top 80%",
-          toggleActions: "play none none none",
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleIndexes((prev) => new Set(prev).add(index));
+            observer.unobserve(node);
+          }
         },
-      });
-    });
+        { threshold: 0.2 }
+      );
 
-    // Cleanup function
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+      observer.observe(node);
+    },
+    [isClient]
+  );
 
   return (
     <div id="services" className="py-10 md:py-20 xl:py-28 font-inter">
@@ -111,18 +92,26 @@ export default function OurGoals() {
           />
         </div>
 
-        <div
-          ref={containerRef}
-          className="mt-10 lg:mt-16 grid gap-6 grid-cols-1 lg:grid-cols-3"
-        >
+        <div className="mt-10 lg:mt-16 grid gap-6 grid-cols-1 lg:grid-cols-3">
           {goals.map((goal, index) => (
             <div
               key={index}
-              className={`rounded-2xl p-8 lg:p-12 transition-transform hover:scale-105 hover:shadow-lg duration-300 ${
-                goal?.customclass
-              } ${goal.bgImage ? "relative overflow-hidden" : ""}`}
+              ref={observeCard(index)}
+              className={`rounded-2xl p-8 lg:p-12 transition-transform duration-300 hover:scale-105 hover:shadow-lg
+                ${goal.customclass} ${goal.bgImage ? "relative overflow-hidden" : ""}
+                transition-all duration-1000 ease-out
+                ${
+                  isClient && visibleIndexes.has(index)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-12"
+                }
+              `}
+              style={{
+                transitionDelay: isClient && visibleIndexes.has(index)
+                  ? `${index * 150}ms`
+                  : "0ms",
+              }}
             >
-              {/* Background image for the second card */}
               {goal.bgImage && (
                 <div className="absolute inset-0 z-0">
                   <Image
@@ -132,10 +121,11 @@ export default function OurGoals() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover"
                     quality={85}
-                    priority={index === 1} // Only prioritize the image for the second card
+                    priority={index === 1}
                   />
                 </div>
               )}
+
               <div className="w-full flex mb-8">
                 <div
                   className={`p-3 rounded-full flex items-center justify-center text-[29px] w-[62px] h-[62px] ${goal.bg}`}

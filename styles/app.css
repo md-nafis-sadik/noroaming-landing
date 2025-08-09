@@ -12,6 +12,10 @@
   color: transparent;
 }
 
+html {
+  font-feature-settings: "liga" off, "clig" off;
+  -webkit-font-feature-settings: "liga" off, "clig" off;
+}
 .content-bg-gradient-primary {
   background: linear-gradient(
     90deg,
